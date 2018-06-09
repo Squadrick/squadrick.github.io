@@ -191,3 +191,5 @@ Calculating the hessian and its inverse is shown to be expensive because each it
 (FYI, I didn't have enough patience to run 1000 iterations of natural gradient descent. If someone wants to run the numbers and update the graph, that'll be great.)
 
 We can make the algorithm faster and more practical for larger networks by using conjugate gradient descent to invert the Fisher Information Matrix. This is what's actually used for TRPO. I might cover conjugate gradients in another post.
+
+All code and results can be found [here.](https://github.com/Squadrick/natural-gradients)
