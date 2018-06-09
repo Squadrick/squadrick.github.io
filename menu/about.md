@@ -1,18 +1,12 @@
 ---
 layout: page
-title: Welcome to Lagrange!
+title: Welcome to my blog!
 ---
 
-Lagrange is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused blogging platform for your personal site or blog. Below you can find everything you need to get started.
+I'm Dheeraj! I'm a computer science undergrad slogging through classes half awake. I was born and brought up in Bangalore, India. Currently I study at Manipal Institute of Technology.
 
-### Getting Started
+I'm part of my university's [AI Robotics Team](http://projectmanas.in), I work as an ML engineer for [Swish](http://theswishapp.io), I'm part of my university's [ACM Student Chapter](https://manipal.acm.org), I occasionally write a few fun side projects which you can check out on my [GitHub](https://github.com/Squadrick) and [GitLab](https://gitlab.com/Squadrick), and I do some competitive coding (not to brag, but ICPC Regionals '17).
 
-[Getting Started]({{ site.github.url }}{% post_url 2015-10-10-getting-started %}): getting started with installing Lagrange, whether you are completely new to using Jekyll, or simply just migrating to a new Jekyll theme.
+I like watching films, I listen to all kinds of music especially if it has some electronic distortion and I waste hours on xkcd/reddit. I enjoy sci-fi books especially Asimov.
 
-### Example Content
-
-[Text and Formatting]({{ site.github.url }}{% post_url 2014-01-01-text-formatting-examples %})
-
-### Questions?
-
-This theme is completely free and open source software. You may use it however you want, as it is distributed under the [MIT License](http://choosealicense.com/licenses/mit/). If you are having any problems, any questions or suggestions, feel free to [tweet at me](https://twitter.com/intent/tweet?text=My%question%about%Lagrange%is:%&amp;via=paululele), or [file a GitHub issue](https://github.com/lenpaul/lagrange/issues/new).
+This blog will be a tad bit on the technical side, with some sprinkling of other random mental ramblings. I'll mostly be writing about machine and deep learing, robotics and new stuff that I've learnt.
