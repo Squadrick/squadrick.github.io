@@ -14,16 +14,16 @@ The difficulty with TRPO is that it uses natural gradients, as opposed to regula
 
 Before reading this post, it is advised that you're comfortable with vector calculus and gradient descent.
 
-Normally we assume the parameter space $$S$$ to Euclidean with an orthonormal coordinate system. So that's the normal 3D space we're familiar with. Using regular gradients here would be ideal.
+Normally we assume the parameter space $$S$$ to be Euclidean with an orthonormal coordinate system. So that's the normal 3D space we're familiar with. Using regular gradients here would be ideal.
 
 However, when $$S$$ is a curved manifold, there is no orthonormal coordinate system. This is particularly when we're in non-Euclidean space, which is what we deal with in most neural network. So the gradients we calculate aren't the true gradients.
 
-So let $$L(w)$$ be the loss function defined in $$S$$ $$(w \in S)$$, the direction of steepest descent of $$L(w)$$ at $$w$$ is defined as the vector $$dw$$ that minimizes $$L(w+dw)$$, where $$dw$$ has a fixed length.
+So let $$L(w)$$ be the loss function defined in $$S (w \in S)$$, the direction of steepest descent of $$L(w)$$ at $$w$$ is defined as the vector $$dw$$ that minimizes $$L(w+dw)$$, where $$dw$$ has a fixed length.
 
-According to this one baller dude called Riemann, the steepest direction is given by
+Riemann proved that the steepest direction in a manifold is given by
 
 $$
--\nabla_{nat} L(w) = -G^{-1}\nabla L(w)
+\nabla_{nat} L(w) = G^{-1}\nabla L(w)
 $$
 
 where $$\nabla_{nat}$$ stands natural gradient, $$\nabla$$ is conventional gradient, and $$G$$ is a matrix called the Riemannian metric.
@@ -32,7 +32,7 @@ Note that $$G$$ depends on the $$w$$, and so is location dependant.
 
 Intuitively, the Riemannian metric tensor describes how the geometry of a manifold affects a differential patch, $$dw$$, at the point $$w$$. The length of a line between two points on $$dw$$ is the distance between them. The Riemannian metric tensor either stretches or shrinks that line and the resulting length is the distance between the two points on the manifold.
 
-When the space is Euclidean, G is an identity matrix, so
+When the space is Euclidean, $$G$$ is an identity matrix, so
 
 $$
 \nabla_{nat} L(w) = \nabla L(w)
@@ -41,12 +41,12 @@ $$
 Using natural gradients, suggests that the gradient descent algorithm should be modified to
 
 $$
-w_{t+1} = w_{t} - \alpha \nabla_{nat} L(w)
+w_{t+1} = w_{t} - \alpha \nabla_{nat} L(w_{t})
 $$
 
 where $$\alpha$$ is the learning rate
 
-For neural networks, $$G$$, the Riemannian metric is given by the Fisher Information Matrix.
+For neural networks, $$G$$ is given by the Fisher Information Matrix.
 
 ### Fisher Information
 
@@ -129,10 +129,11 @@ W = tf.get_variable('w', shape=[7840])
 The matrix multiplication step and loss calculation:
 ```python
 output = tf.matmul(X, tf.reshape(W, [784, 10]))
+probs = tf.nn.softmax(output)
 loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=Y, logits=output))
 ```
 
-As you can see above, we're using the cross entropy loss.
+As you can see above, we're using the cross entropy loss. `probs` has the probability distribution across all the numbers.
 
 Time to calculate the natural gradients. First we need the conventional gradients:
 ```python
@@ -141,7 +142,7 @@ grad_cov = tf.gradients(loss, W)
 
 For finding the Fisher Information Metric, we'll need the KL of our output, let's make use of `CategoricalPd` class above for this.
 ```python
-pd = CategoricalPd(output)
+pd = CategoricalPd(probs)
 kl = tf.reduce_mean(pd.self_kl())
 ```
 
@@ -184,6 +185,9 @@ def pinv(A, b, reltol=1e-6):
 	return tf.matmul(v, tf.matmul(s_inv, 
 		tf.matmul(u, tf.reshape(b, [-1, 1]), transpose_a=True)))
 ```
-I finally could train the simple one layer network with a learning rate of `1e-1` and batch size of `32`, here's the convergence graph along with vanilla gradients thrown in to show that all the work is worth something. As you can see the natural gradient descent(orange) reaches the same loss as conventional gradient descent(blue) in much few iterations.
+I finally could train the simple one layer network with a learning rate of `1e-3` and batch size of `32`, here's the convergence graph along with vanilla gradients thrown in to show that all the work is worth something. As you can see the natural gradient descent(orange) reaches the same loss as conventional gradient descent(blue) in much few iterations.
 ![naive plot](https://i.imgur.com/dJv2p7c.png "Conventional vs Natural Gradient Descent")
-Calculating the hessian and its inverse is shown to be expensive because each iteration of natural gradient descent took around 30 seconds. As compared to regular gradient descent, where I did 1000 iterations in less than 3 seconds. Clearly, we need a more efficient way to do natural gradient descent, one of the most popular ways is to use conjugate descent to invert the Fisher Information Matrix.
+Calculating the hessian and its inverse is shown to be expensive because each iteration of natural gradient descent took around 30 seconds. As compared to regular gradient descent, where I did 1000 iterations in less than 3 seconds. Clearly, we need a more efficient way to do natural gradient descent, one of the most popular ways is to use conjugate descent to invert the Fisher Information Matrix. 
+(FYI, I didn't have enough patience to run 1000 iterations of natural gradient descent. If someone wants to run the numbers and update the graph, that'll be great.)
+
+We can make the algorithm faster and more practical for larger networks by using conjugate gradient descent to invert the Fisher Information Matrix. This is what's actually used for TRPO. I might cover conjugate gradients in another post.
