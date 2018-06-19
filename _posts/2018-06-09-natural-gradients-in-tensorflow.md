@@ -3,7 +3,7 @@ layout: post
 title: "Natural Gradients in Tensorflow"
 author: "Dheeraj R. Reddy"
 categories: journal
-tags: [documentation,sample]
+tags: [tensorflow, machine learning]
 ---
 
 So I recently started learning deep reinforcement learning, and decided to make an open source Deep RL framework called ReiLS.
