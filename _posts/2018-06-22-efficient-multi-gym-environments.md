@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Multiprocessed Gym Environments"
+title: "Efficient Multiple Gym Environments"
 author: "Dheeraj R. Reddy"
 categories: journal
 tags: [distributed computing]
