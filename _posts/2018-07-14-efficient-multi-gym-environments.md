@@ -83,9 +83,9 @@ class MultiEnv:
         return obs, rewards, dones, infos
 ```
 
-This isn't perfect either, because I haven't created a an `action_space` or `observation_space` field that other Gym environments have. But the above `MultiEnv` should be good enough.
+This isn't perfect either, because I haven't created `action_space` and `observation_space` fields that other Gym environments have. But the above `MultiEnv` should be good enough for timing the performance.
 
-Let's create an instance of this class, which encapsulated 10 `Breakout-v0` Gym environments.
+Let's create an instance of this class, which encapsulates 10 `Breakout-v0` Gym environments.
 ```python
 multi_env = MultiEnv('Breakout-v0', 10)
 ```
@@ -114,3 +114,141 @@ There's a few ways to acheive concurrent behaviour in Python:
 We can immediately disregard one of the above options -- Multithreading. This is because of Python's GIL.
 
 Global interpreter lock (GIL) is a mutex used by CPython, that allows a process to use only one thread at a time. This prevents us from taking advantage of multicore processors. [Here](https://opensource.com/article/17/4/grok-gil) is an excellent article about Python's GIL and how exactly it works.
+
+### Multiprocessing
+
+Let's build a gym environment that uses Python's Multiprocessing module.
+
+This is a wrapper class that can be used to treat multiple Gym environments through a single object.
+
+```python
+class SubprocVecEnv():
+	def __init__(self, env_fns):
+		self.waiting = False
+		self.closed = False
+		no_of_envs = len(env_fns)
+		self.remotes, self.work_remotes = \
+			zip(*[Pipe() for _ in range(no_of_envs)])
+		self.ps = []
+		
+		for wrk, rem, fn in zip(self.work_remotes, self.remotes, env_fns):
+			proc = Process(target = worker, 
+				args = (wrk, rem, CloudpickleWrapper(fn)))
+			self.ps.append(proc)
+
+		for p in self.ps:
+			p.daemon = True
+			p.start()
+
+		for remote in self.work_remotes:
+			remote.close()
+```
+
+A few things I've used above haven't been defined yet like `worker` and `CloudpickleWrapper`, let's do that now
+
+```python
+import pickle
+import cloudpickle
+
+class CloudpickleWrapper(object):
+	def __init__(self, x):
+		self.x = x
+
+	def __getstate__(self):
+		return cloudpickle.dumps(self.x)
+
+	def __setstate__(self, ob):
+		self.x = pickle.loads(ob)
+	
+	def __call__(self):
+		return self.x()
+```
+
+I'm using an external library called [cloudpickle](https://github.com/cloudpipe/cloudpickle), which gives us extended pickle support particularly useful for transporting objects between processes running the same version of Python.
+
+Now we need to define the `target` that each `Process` will use. A `worker` can be thought as the behaviour of each `Process`.
+
+```python
+def worker(remote, parent_remote, env_fn):
+	parent_remote.close()
+	env = env_fn()
+	while True:
+		cmd, data = remote.recv()
+		
+		if cmd == 'step':
+			ob, reward, done, info = env.step(data)
+			if done:
+				ob = env.reset()
+			remote.send((ob, reward, done, info))
+
+		elif cmd == 'render':
+			remote.send(env.render())
+
+		elif cmd == 'close':
+			remote.close()
+			break
+
+		else:
+			raise NotImplentedError
+```
+
+Let's finish our implementation of `SubprocVecEnv` be defining the basic Gym environment functions.
+```python
+import numpy as np
+
+class SubprocVecEnv():
+	def __init__(self):
+		# See above
+	
+	def step_async(self, actions):
+		if self.waiting:
+			raise AlreadySteppingError
+		self.waiting = True
+
+		for remote, action in zip(self.remotes, actions):
+			remote.send(('step', action))
+	
+	def step_wait(self):
+		if not self.waiting:
+			raise NotSteppingError
+		self.waiting = False
+
+		results = [remote.recv() for remote in self.remotes]
+		obs, rews, dones, infos = zip(*results)
+		return np.stack(obs), np.stack(rews), np.stack(dones), info
+	
+	def step(self, actions):
+		self.step_async(actions)
+		return self.step_wait()
+	
+	def reset(self):
+		for remote in self.remotes:
+			remote.send(('reset', None))
+
+		return np.stack([remote.recv() for remote in self.remotes])
+	
+	def close(self):
+		if self.closed:
+			return
+		if self.waiting:
+			for remote in self.remotes:
+				remote.recv()
+		for remote in self.remotes:
+			remote.send(('close', None))
+		for p in self.ps:
+			p.join()
+		self.closed = True
+```
+
+We're finally done, and we're ready to run some more experiments. Let's make a simple helper function for launching multiprocessor Gym environments:
+
+```python
+def make_mp_envs(env_id, num_env, seed, start_idx = 0):
+	def make_env(rank):
+		def fn():
+			env = gym.make(env_id)
+			env.seed(seed + rank)
+			return env
+		return fn
+	return SubprocVecEnv([make_env(i + start_idx) for i in range(num_env)])
+```
