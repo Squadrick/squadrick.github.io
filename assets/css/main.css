@@ -272,6 +272,7 @@ hr {
 code,
 pre {
   font-family: "Source Code Pro", monospace;
+  tab-size: 4;
 }
 code {
   padding: .25em .5em;
