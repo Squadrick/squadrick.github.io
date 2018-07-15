@@ -252,3 +252,56 @@ def make_mp_envs(env_id, num_env, seed, start_idx = 0):
 		return fn
 	return SubprocVecEnv([make_env(i + start_idx) for i in range(num_env)])
 ```
+
+Let's plot the time taken for `step` by a single Gym environment as compared to our multiprocessor Gym wrapper.
+
+![multi-proc](https://i.imgur.com/0flmiPD.png "Multiprocessor comparision")
+
+(Note: The single Gym environment here appears to be slower than before since the two experiments were run on different computer, I'll make a proper definite benchmark at a later time. Sorry!)
+
+Clearly it's faster, but it still scales sub-linearly with the number of environment, whereas one would expect no growth atleast early on, at least as far as the number of environments is equal to the number of cores. To understand the reason for the slowdown, let's take a look at `step_async` and `step_wait`.
+
+```python
+def step_async(self, actions):
+	if self.waiting:
+		raise AlreadySteppingError
+	self.waiting = True
+
+	for remote, action in zip(self.remotes, actions):
+		remote.send(('step', action))
+```
+
+In the above method, we send a `step` command to each of our processes along with the action, but we don't wait for a response, and we set `waiting = True`
+
+```python
+def step_wait(self):
+	if not self.waiting:
+		raise NotSteppingError
+	self.waiting = False
+
+	results = [remote.recv() for remote in self.remotes]
+	obs, rews, dones, infos = zip(*results)
+	return np.stack(obs), np.stack(rews), np.stack(dones), info
+```
+
+In the `step_wait` method, we now need to synchronize every process, collect all the responses and return it. The problem is that the sync step is expensive. Since the speed of all the other processes is bogged down by the slowest process. As an extreme example, consider 10 processes where the first 9 execute a `step` on its own Gym instance in 1 second, and the 10th process takes 100 seconds to complete the same action.
+
+In this line `results = [remote.recv() for remote in self.remote]`, we need to wait for `remote.recv()` of the 10th process for 100 seconds, even though all the previous processes were much faster.
+
+Although in reality, the time taken by each process is comparable, we stil need to wait for the slowest process each time. This synchronization step causes the increase in time with increase in environment.
+
+So if each individual environment's `step` is very light and fast, it's better to use the seqeuntial wrapper. But if each environment is heavy, it's better to use the concurrent wrapper.
+
+You could also mix both of them together. We launch a number of processes, where each process executes sequentially on a number of environments. This is particularly useful for Environments that are not too heavy or too light such as Atari. But finding the right number of processes vs. number of sequential environments takes some tinkering to find what works best of your hardware.
+
+Implementing this would be super easy in my code. Just modify `make_env` function in `make_mp_envs`. Instead of `env = gym.make(env_id)` use `env = MultiEnv(env_id, num_seq)`. Each `observation` and `action` will now be a matrix of size `[num_proc, num_seq]` which you can flatten out and treat as a vector.
+
+### MPI
+
+Using multiprocessing for parallel gym environments was a definite improvement, however it's useful only for a single PC with multiple cores. For large scale training using clusters of PCs, we'll need to look a little further.
+
+Python's multiprocessing can spawn multi processes but they will still be bound with a single node.
+
+What we will need is a framework that handles spawning of processes across multiple nodes and provides a mechanism for communication between the processors. Pretty much what MPI does.
+
+MPI is not the only tool that can be used for this. Other popular choices are pp, jug, pyro and celery although I can't vouch for any since I have no experience with any of them. 
