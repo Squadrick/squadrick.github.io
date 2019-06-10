@@ -1,6 +1,6 @@
 ---
 layout: page
-title : Welcome to my blog!
+title: Welcome to my blog!
 ---
 
 I'm Dheeraj! I'm a computer science undergrad slogging through classes half awake. I was born and brought up in Bangalore, India. Currently I study at Manipal Institute of Technology. Here's my (slightly outdated) [Résumé](https://github.com/Squadrick/squadrick.github.io/raw/gh-pages/Resume.pdf).
