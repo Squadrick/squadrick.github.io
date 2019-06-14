@@ -10,8 +10,6 @@ This was the documentation for a project I completed as part of my compilers cla
 
 ---
 
-## Neural Network Compiler (NNC)
-
 Input to the compiler is a `.nnc` file. The file is divided into two sections:
   1. Model properties
   2. Model definition
@@ -126,14 +124,14 @@ The class has the following methods:
   2. `minimize()`
   3. `finalize()`
 
-##### forward()
+#### forward()
 Takes a tensor as input, and returns a tensor as a output.
 
-##### minimize()
+#### minimize()
 Takes a tensor as input, and returns the loss as output. Performs one step
 of optimization.
 
-##### finalize()
+#### finalize()
 Writes the weight matrices into `filename.h5`, which can be loaded up for
 later.
 
