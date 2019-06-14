@@ -3,7 +3,7 @@ layout: post
 title: "Neural Network Compiler (NNC)"
 author: "Dheeraj R. Reddy"
 categories: journal
-tags: [tensorflow, machine learning]
+tags: [machine learning, compiler]
 ---
 
 This was the documentation for a project I completed as part of my compilers class. It's a language to define neural networks, which is then optimized and compiled into efficient executable C++ code. The code of the compiler needs some refining, and will be released shortly. Also, note that the entire project was completed in around 48 hours, so forgive any errors and lack of foresight.
@@ -126,14 +126,14 @@ The class has the following methods:
   2. `minimize()`
   3. `finalize()`
 
-###### forward()
+##### forward()
 Takes a tensor as input, and returns a tensor as a output.
 
-###### minimize()
+##### minimize()
 Takes a tensor as input, and returns the loss as output. Performs one step
 of optimization.
 
-###### finalize()
+##### finalize()
 Writes the weight matrices into `filename.h5`, which can be loaded up for
 later.
 
