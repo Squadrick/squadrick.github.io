@@ -6,11 +6,11 @@ categories: journal
 tags: [cpp]
 ---
 
-I was working with C++ to build a replacement for [Costmap ROS](http://wiki.ros.org/costmap_2d) to use in a driverless car, since Costmap ROS is targeted towards smaller autonomous bots. To this end, the current plan is to make it work in real time, and include some more functionality (like bayesian updates). 
+I was working with C++ to build a replacement for [Costmap ROS](http://wiki.ros.org/costmap_2d) to use in a driverless car, since Costmap ROS is targeted towards smaller autonomous bots. To this end, the current plan is to make it work in real time, and include some more functionality (like bayesian updates).
 
 In my implementation, the costmap is split into two parts: `Costmap`, which handles the inter-process communication using ROS, and wraps `MapGrid` which is the low-level grid that does most of the heavy lifting. The division of these two layers to so that we can port `Costmap` from using ROS to ROS2, once the latter is more stable.
 
-In this post I'll be outlining a little feature I implemented to make my life easier while building `MapGrid`. 
+In this post I'll be outlining a little feature I implemented to make my life easier while building `MapGrid`.
 
 Let me outline the problem first. I'm using a structure to keep track of the bounds, where each map is a rectangle, like this:
 
@@ -46,7 +46,7 @@ After reading the blogpost, I decided to implement my own `Guarded` type for use
 
 ---
 
-### The Crux 
+### The Crux
 
 Base type definition:
 
@@ -59,16 +59,24 @@ class Guarded {
 where `max` and `min` are the upper and lower bounds of my type. We can modify it to have default template parameters are the maximum and minimum of type `T` respectively by modifying the template to be:
 
 ```c++
-template <typename T, T max = std::numeric_limits<T>::max(), T min = std::numeric_limits<T>::min()>
+template <typename T,
+          T max = std::numeric_limits<T>::max(),
+          T min = std::numeric_limits<T>::min()>
 ```
 
 Thankfully both `numeric_limits<T>::max()` and `numeric_limits<T>::min()` are `constexpr`s. The most important thing is that we need to be able to check for valid data during compile time. We can either use `if constexpr`, or the easier `static_assert`:
 
 ```c++
-template <typename T, T max = std::numeric_limits<T>::max(), T min = std::numeric_limits<T>::min()>
+template <typename T,
+          T max = std::numeric_limits<T>::max(),
+          T min = std::numeric_limits<T>::min()>
 class Guarded {
-  static_assert(max <= std::numeric_limits<T>::max(), "possible overflow detected");
-  static_assert(min >= std::numeric_limits<T>::min(), "possible underflow detected");
+  static_assert(max <= std::numeric_limits<T>::max(),
+      "possible overflow detected");
+
+  static_assert(min >= std::numeric_limits<T>::min(),
+      "possible underflow detected");
+
   static_assert(max >= min, "incorrect bounds");
 
   T value;
@@ -103,8 +111,8 @@ public:
   }
 
   template <typename otherT, otherT otherMax, otherT otherMin>
-  inline constexpr Guarded(const Guarded<otherT, otherMax, otherMin> &other)
-      : value(other.value) {
+  inline constexpr Guarded(const Guarded<otherT, otherMax, otherMin>
+      &other) : value(other.value) {
     static_assert(otherMax <= max, "possible overflow detected");
     static_assert(otherMin >= min, "possible underflow detected");
   }
@@ -112,10 +120,11 @@ public:
 };
 ```
 
-Right now, you must be noticing that the only way to assign something to `value` is through the unsafe constructor. We can make a utility function (similar to `make_shared`) to create a `Guarded` value. 
+Right now, you must be noticing that the only way to assign something to `value` is through the unsafe constructor. We can make a utility function (similar to `make_shared`) to create a `Guarded` value.
 
 ```c++
-template <typename T, T val> inline constexpr Guarded<T, val, val> guard() {
+template <typename T, T val> inline constexpr Guarded<T, val, val>
+guard() {
   return Guarded<T, val, val>(val);
 }
 ```
@@ -168,20 +177,22 @@ auto c = a + b;
 // c.min = 1
 ```
 
-The above code won't throw any compile time warnings. This culprit here is 
+The above code won't throw any compile time warnings. This culprit here is
 
 ```c++
-return Guarded<decltype(T() + otherT()), std::max(max, otherMax), std::min(min, otherMin)>(value + other.value);
+return Guarded<decltype(T() + otherT()), std::max(max, otherMax),
+    std::min(min, otherMin)>(value + other.value);
 ```
 
 I'm calling the "unsafe" constructor that doesn't check for any bounds, which causes the problem. But we had compile time checking for assignments using `guard()`. Let's use that here:
 
 ```c++
-return Guarded<decltype(T() + otherT()), std::max(max, otherMax), std::min(min, otherMin)>(
-	guard<decltype(T() + otherT()), value+other.value>());
+return Guarded<decltype(T() + otherT()), std::max(max, otherMax),
+    std::min(min, otherMin)>(
+      guard<decltype(T() + otherT()), value+other.value>());
 ```
 
-This looks like it works, but it doesn't. This is because `value+other.value` can't be a `constexpr`, and therefore this can't be evaluated compile, and we get a compilation error. (If someone figures out a workaround for this, please let me know.) 
+This looks like it works, but it doesn't. This is because `value+other.value` can't be a `constexpr`, and therefore this can't be evaluated compile, and we get a compilation error. (If someone figures out a workaround for this, please let me know.)
 
 Instead we're stuck using the unsafe constructor without compile time bounds checking. If the need arises, we could do a run time check or clip in the constructor. Or we could modify how we assign `newMax` and `minMin` to never worry about this situation. Or do what I do:
 
@@ -228,10 +239,11 @@ In the code snippet `check_under_over_flow` ensures that we don't access unsafe 
 Guarded<uint16_t, MAX_MAP_DIM> newX = b1.x1 + b2.x1;
 Guarded<uint16_t, MAX_MAP_DIM> newY = b1.x1 + b2.x1;
 
-__map[newX.value * MAX_MAP_DIM + newY.value] = 0; // will never throw a segfault
+__map[newX.value * MAX_MAP_DIM + newY.value] = 0;
+// will never throw a segfault
 ```
 
-In my application, I can't really make use compile time checks all that much, I've modified `Guarded` to include a lot more runtime checks and calculations since most of the information is unknown at compile time and depends on the sensor readings during runtime. 
+In my application, I can't really make use compile time checks all that much, I've modified `Guarded` to include a lot more runtime checks and calculations since most of the information is unknown at compile time and depends on the sensor readings during runtime.
 
 Is this the perfect solution? No. There's a lot of things I didn't account for, and there's probably better ways to do it, I'm no C++ expert, but I found it useful for my case and maybe you might too.
 
