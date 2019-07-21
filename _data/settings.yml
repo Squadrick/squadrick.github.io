@@ -13,7 +13,7 @@ menu:
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
 - {icon: 'github', link: 'https://www.github.com/squadrick'}
-# - {icon: 'twitter', link: 'https://twitter.com/TheDheerajReddy'}
+- {icon: 'twitter', link: 'https://twitter.com/DheerajRajaram'}
 - {icon: 'linkedin', link: 'http://www.linkedin.com/in/dheeraj-rajaram-reddy-91ba93120/'}
 - {icon: 'envelope', link: 'mailto:dheeraj98reddy@gmail.com'}
 # - {icon: 'rss-square', link: '/rss-feed.xml'}
