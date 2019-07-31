@@ -21,7 +21,7 @@ struct Bounds {
 };
 ```
 
-Each `MapGrid` is composed of smaller `MapArea`s each having their own `bounds`, and `MapGrid` has it's own all emcompassing `bounds`. Something like this:
+Each `MapGrid` is composed of smaller `MapArea`s each having their own `bounds`, and `MapGrid` has it's own all encompassing `bounds`. Something like this:
 
 ```c++
 class MapArea {
@@ -56,7 +56,7 @@ class Guarded {
   T value;
 }
 ```
-where `max` and `min` are the upper and lower bounds of my type. We can modify it to have default template parameters are the maximum and minimum of type `T` respectively by modifying the template to be:
+where `max` and `min` are the upper and lower bounds of my type. We can modify it to have default template parameters as the maximum and minimum of type `T` respectively by modifying the template to be:
 
 ```c++
 template <typename T,
@@ -141,7 +141,7 @@ Guarded<int, 100, 0> c = a; // works
 std::cout << a.value << std::endl; // prints 10
 ```
 
-We can get compile time errors because all of the code is evaluated at run-time by the compiler since we've used `constexpr` and `static_assert`. C++ is weirdly great because of this thing called Metatemplate Programming that allows for Turing complete computations at compile time.
+We can get compile time errors because all of the code is evaluated at compile time since we've used `constexpr` and `static_assert`. C++ is weirdly great because of this thing called Metatemplate Programming that allows for Turing completeness at compile time.
 
 Being able to just do guarded assignments is pretty useless for anything more than a blog post, so let's tackle addition of two `Guarded` types using operator overloading.
 
@@ -155,7 +155,7 @@ operator+(const Guarded<otherT, otherMax, otherMin> other) const {
 }
 ```
 
-`decltype` is used to deduce the type from `T` and `otherT`. The important thing to note is how we handle the new upper and lower guard bounds. In this example use case, we've set `newMax = max(max, otherMax)` and `minMin = min(min, otherMin)`. The value of these bounds for addition can be changed to best suite ones needs; the only requirements being that it's a `constexpr` that evaluates at compile time. To show you how exactly the bounds work:
+`decltype` is used to deduce the type from `T` and `otherT`. The important thing to note is how we handle the new upper and lower guard bounds. In this example, we've set `newMax = max(max, otherMax)` and `minMin = min(min, otherMin)`. The value of these bounds for addition can be changed to best suite ones needs; the only requirements being that it's a `constexpr` that evaluates at compile time. To show you how exactly the bounds work:
 
 ```c++
 Guarded<int, 10, 1> a = guard<int, 3>();
@@ -163,7 +163,7 @@ Guarded<int, 15, 10> b = guard<int, 11>();
 auto c = a + b;
 // c.value = 3
 // c.max = max(10, 15) = 15
-// c.min = min(1, 10) = 10
+// c.min = min(1, 10) = 1
 ```
 
 There's one glaring problem here, consider:
@@ -192,7 +192,7 @@ return Guarded<decltype(T() + otherT()), std::max(max, otherMax),
       guard<decltype(T() + otherT()), value+other.value>());
 ```
 
-This looks like it works, but it doesn't. This is because `value+other.value` can't be a `constexpr`, and therefore this can't be evaluated compile, and we get a compilation error. (If someone figures out a workaround for this, please let me know.)
+This looks like it works, but it doesn't. This is because `value+other.value` can't be a `constexpr`, and therefore this can't be evaluated at compile. (If someone figures out a workaround for this, please let me know.)
 
 Instead we're stuck using the unsafe constructor without compile time bounds checking. If the need arises, we could do a run time check or clip in the constructor. Or we could modify how we assign `newMax` and `minMin` to never worry about this situation. Or do what I do:
 
@@ -233,7 +233,7 @@ uint16_t newY = b1.y2 + b2.y2;
 __map[newX * MAX_MAP_DIM + newY] = 0; // might throw segfault if it overflows
 ```
 
-In the code snippet `check_under_over_flow` ensures that we don't access unsafe memory, but calling it after every check makes it tedious. With the new `Guarded` type:
+`check_under_over_flow` ensures that we don't access unsafe memory, but calling it after every check makes it tedious. With the new `Guarded` type:
 
 ```c++
 Guarded<uint16_t, MAX_MAP_DIM> newX = b1.x1 + b2.x1;
@@ -243,17 +243,10 @@ __map[newX.value * MAX_MAP_DIM + newY.value] = 0;
 // will never throw a segfault
 ```
 
-In my application, I can't really make use compile time checks all that much, I've modified `Guarded` to include a lot more runtime checks and calculations since most of the information is unknown at compile time and depends on the sensor readings during runtime.
+In my application, I can't really make use of compile time checks all that much, I've modified `Guarded` to include a lot more runtime checks and calculations since most of the information is unknown at compile time and depends on the sensor readings during runtime.
 
 Is this the perfect solution? No. There's a lot of things I didn't account for, and there's probably better ways to do it, I'm no C++ expert, but I found it useful for my case and maybe you might too.
 
 ---
 
 If you have any criticisms of this blog post, please [email me](mailto:dheeraj98reddy@gmail.com) and let me know. I'm still learning and anything to help me out is something I look forward to.
-
-Links to things I've found enjoyable over the last few weeks:
-* [The Valleyfolk](https://www.youtube.com/channel/UCkEXXbo1QOTesV8h2hkN-1g), RIP Sourcefed.
-* [Reply All](https://gimletmedia.com/shows/reply-all)
-* [Jesus Christ or Russell Brand](https://github.com/scottleechua/jesus-russell)
-* [Bearcels](https://www.reddit.com/r/bearcels)
-* [TensorFlow Addons](https://github.com/tensorflow/addons)
