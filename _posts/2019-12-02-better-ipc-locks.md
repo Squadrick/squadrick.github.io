@@ -31,7 +31,7 @@ It worked well enough in our tests, but I'd like something better.
 
 ---
 
-#### Implementation
+### Implementation
 
 The requirement is a reader-writer lock (`rwlock`) since it'll be used 
 to protect a multi-reader, multi-writer queue. The algorithm for building 
@@ -126,7 +126,7 @@ void IPC_Lock::consistency_handler(pthread_mutex_t *mutex, int result) {
 I'm not dwelling into the code as much as the previous post since the 
 code is faily simple and straight forward.
 
-#### Performance 
+### Performance 
 
 The speed of `IPC_Lock` with and without the shared and robust mechanism: 
 `PTHREAD_PROCESS_SHARED`, `PTHREAD_MUTEX_ROBUST` and `consistency_handler`
@@ -134,7 +134,7 @@ is very similar. Doing simple tests of repeated lock/unlock doesn't really
 show much of a different. I'll update this section after a more thorough
 benchmark.
 
-#### Problems
+### Problems
 
 I'm hoping to add more OS support for Shadesmar. The implementation of 
 `pthread` in OSX doesn't support `pthread_mutexattr_setrobust`, 
