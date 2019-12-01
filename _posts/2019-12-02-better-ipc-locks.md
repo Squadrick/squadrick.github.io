@@ -16,8 +16,8 @@ few weeks, I decided to implement the alternative lock.
 Before going into the implementation details, I'd like to point out the 
 problems with the previous implementation:
 
-1. As pointed by [wahern on HN](https://news.ycombinator.com/item?id=21402988)
-   - PIDs are recycled. Although the problem would arise very rarely, it 
+1. As pointed by [wahern on HN](https://news.ycombinator.com/item?id=21402988): 
+   PIDs are recycled. Although the problem would arise very rarely, it 
    is still possible that process which died while holding the lock could
    have its PID recycled, preventing our recovery mechanism from working
    as expected.
