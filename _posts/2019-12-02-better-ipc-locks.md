@@ -6,6 +6,20 @@ categories: journal
 tags: [cpp, ipc, shadesmar]
 ---
 
+Jan 2020 Update: This lock does not work. Please don't use it. I'm currently 
+trying to fix it. Check out the previous post instead, which as of right now
+seems work as intended. 
+
+In the words of Linux Torvals: "Because you should never ever think that you're 
+clever enough to write your own locking routines.. Because the likelihood is 
+that you aren't (and by that "you" I very much include myself - we've 
+tweaked all the in-kernel locking over decades, and gone through the simple 
+test-and-set to ticket locks to cacheline-efficient queuing locks, and even 
+people who know what they are doing tend to get it wrong several times).
+There's a reason why you can find decades of academic papers on locking. Really. It's hard."
+
+---
+
 This is a follow-up to my previous post on 
 [Interprocess Locks](https://squadrick.github.io/journal/ipc-locks.html), 
 where an alternate approach was to use a `ptread_mutex` with attributes 
