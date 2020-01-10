@@ -8,7 +8,7 @@ tags: [cpp, ipc, shadesmar]
 
 Jan 2020 Update: This lock does not work. Please don't use it. I'm currently 
 trying to fix it. Check out the previous post instead, which as of right now
-seems work as intended. 
+seems to work as intended. 
 
 In the words of Linux Torvals: "Because you should never ever think that you're 
 clever enough to write your own locking routines.. Because the likelihood is 
