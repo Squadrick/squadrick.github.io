@@ -1,1 +1,1 @@
-Go to: [squadrick.github.io](https://squadrick.dev)
+Go to: [squadrick.dev](https://squadrick.dev)
