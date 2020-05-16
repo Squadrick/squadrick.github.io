@@ -1,8 +1,3 @@
-# Change to true for Disqus comments
-disqus:
-  comments: false
-  disqus_shortname: 'https-lenpaul-github-io-lagrange'
-
 google-ID: 'UA-142173459-1'
 
 menu:
@@ -14,7 +9,6 @@ menu:
 social:
 - {icon: 'github', link: 'https://www.github.com/squadrick'}
 - {icon: 'twitter', link: 'https://twitter.com/DheerajRajaram'}
-- {icon: 'linkedin', link: 'http://www.linkedin.com/in/dheeraj-rajaram-reddy-91ba93120/'}
 - {icon: 'envelope', link: 'mailto:dheeraj98reddy@gmail.com'}
 - {icon: 'rss-square', link: '/rss-feed.xml'}
 
@@ -25,6 +19,6 @@ pagination:
 
 sharing_button_prompt: 'Feel free to share!'
 
-related_posts: 'You may also enjoy:'
+related_posts: 'Related posts:'
 
 post_date_prefix: 'Written on'

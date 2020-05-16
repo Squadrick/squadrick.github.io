@@ -11,7 +11,7 @@
 #   sort_reverse: true
 
 # jekyll-paginate configuration
-paginate:            5
+paginate:            10
 
 # Build settings
 markdown:            kramdown
@@ -21,9 +21,9 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           'Squadrick'
-description:	       'a personal tech blog'
+description:	       'AKA Dheeraj R. Reddy'
 author:              'Dheeraj R. Reddy'
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
-#feed:
-#  path: rss-feed.xml
+feed:
+  path: rss-feed.xml
