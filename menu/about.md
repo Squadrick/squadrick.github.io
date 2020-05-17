@@ -5,7 +5,7 @@ title: About Me.
 
 I'm Dheeraj, and I commonly use Squadrick as my internet moniker. I'm a computer science undergrad. I like doing coding stuffs. 
 
-I like open source software. I'm a maintainer of [TensorFlow Addons](https://github.com/tensorflow/addons/), and I contribute to other projects: TensorFlow, PyTorch, Jax, etc.  I occasionally work on a few side projects which you can check out on my [GitHub](https://github.com/Squadrick). 
+I like open source software. I used to be a  maintainer of [TensorFlow Addons](https://github.com/tensorflow/addons/), and I contribute to other projects: TensorFlow, PyTorch, Jax, etc.  I occasionally work on a few side projects which you can check out on my [GitHub](https://github.com/Squadrick). 
 
 I'm currently interning at [ThoughtSpot](https://www.thoughtspot.com/) building an AI for BI. I was part of my university's [AI Robotics Team](http://projectmanas.in), where we worked on building an autonomous car, and won [IGVC 2019](http://www.igvc.org/). I've had a few interships over the four years of college, mostly focusing on ML.
 
