@@ -428,18 +428,24 @@ benchmarks were run on my PC with the following specifications:
 
 Stick to `std::memcpy`. It delivers great performance while also adapting to
 the hardware architecture, and makes no assumptions about the memory alignment.
+
 If performance truly matters, then you might want to consider using a more
 specific non-genetic implementation with alignment requirements. The streaming
 prefetching copy works the best for larger copies (>1MB), but the performance
-for small sizes is abyssal. Swapping from `std::memcpy` to `_avx_async_pf_cpy`
-for publishing a large pointcloud improved performance significantly.
+for small sizes is abyssal, but `memcpy` matches its performance. For small to
+medium sizes Unrolled AVX absolutely dominates, but as for larger messages, it
+is slower than the streaming alternatives. The regular `RepMovsb` is by far the
+worst overall performer as excepted.
 
-A generic streaming memory copy algorithm with prefetching is on the roadmap
-for better large message performance.
+Unrolling definitely improves performance in most cases by about 5-10%. The
+only case where the unrolled version is slower than rolled version is for
+`AvxCopier` with data size of 32B, which the unrolled version is 25% slower.
+The rolled version will do a single AVX-256 load/store and a conditional check.
+The unrolled version will do 4 AVX-256 load/stores and a conditional check.
 
 ### Code
 
 Code for all the methods is included in the library conforming to the above
 mentioned API. To actively warn about the danger of using these custom copiers
 I have named this file [`dragons.h`](https://github.com/Squadrick/shadesmar/blob/master/include/shadesmar/memory/dragons.h),
-with any apt message: *Here be dragons*.
+with an apt message: *Here be dragons*.
