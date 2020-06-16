@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Going Faster than memcpy"
+title: "Going faster than memcpy"
 author: "Dheeraj R Reddy"
 categories: journal
 tags: [cpp]
