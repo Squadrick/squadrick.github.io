@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Me.
+title: About Me
 ---
 
 I'm Dheeraj, and I commonly use Squadrick as my internet moniker. I'm a computer science undergrad. I like doing coding stuffs. 
