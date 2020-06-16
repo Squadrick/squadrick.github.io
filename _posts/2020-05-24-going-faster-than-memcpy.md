@@ -422,7 +422,7 @@ benchmarks were run on my PC with the following specifications:
 1. AMD Ryzen 7 3700X
 2. 2x8GB DDR4 RAM @ 3600Mhz
 
-TODO: Add graphs
+{% include graphs/memcpy.html %}
 
 ### Conclusion
 
