@@ -120,28 +120,28 @@ data (via NT) is copied from registers into destination.
 
 ```nasm
 L(loop_large_forward):
-	/* Copy 4 * VEC a time forward with non-temporal stores.  */
+	; Copy 4 * VEC a time forward with non-temporal stores.
 	PREFETCH_ONE_SET (1, (%rsi), PREFETCHED_LOAD_SIZE * 2)
 	PREFETCH_ONE_SET (1, (%rsi), PREFETCHED_LOAD_SIZE * 3)
-  // PREFETCH 256b from rsi+256 to rsi+511
+  ; PREFETCH 256b from rsi+256 to rsi+511
 
 	VMOVU	(%rsi), %VEC(0)
 	VMOVU	VEC_SIZE(%rsi), %VEC(1)
 	VMOVU	(VEC_SIZE * 2)(%rsi), %VEC(2)
 	VMOVU	(VEC_SIZE * 3)(%rsi), %VEC(3)
-  // mov 128b from rsi to rsi+127 -> 4 ymm registers (cahce)
-  // 2 loops later, we hit the prefetched values
+  ; mov 128b from rsi to rsi+127 -> 4 ymm registers (cahce)
+  ; 2 loops later, we hit the prefetched values
 
-	addq	$PREFETCHED_LOAD_SIZE, %rsi  // advance to rsi+128 in next loop
+	addq	$PREFETCHED_LOAD_SIZE, %rsi  ; advance to rsi+128 in next loop
 	subq	$PREFETCHED_LOAD_SIZE, %rdx
 
 	VMOVNT	%VEC(0), (%rdi)
 	VMOVNT	%VEC(1), VEC_SIZE(%rdi)
 	VMOVNT	%VEC(2), (VEC_SIZE * 2)(%rdi)
 	VMOVNT	%VEC(3), (VEC_SIZE * 3)(%rdi)
-  // mov 128b from 4 ymm register -> rdi to rdi+127 (no cache)
+  ; mov 128b from 4 ymm register -> rdi to rdi+127 (no cache)
 
-	addq	$PREFETCHED_LOAD_SIZE, %rdi  // advance to rdi+128 in next loop
+	addq	$PREFETCHED_LOAD_SIZE, %rdi  ; advance to rdi+128 in next loop
 	cmpq	$PREFETCHED_LOAD_SIZE, %rdx
 	ja	L(loop_large_forward)
 ```
