@@ -3,7 +3,7 @@ layout: page
 title: Feed
 ---
 
-A running list of things in the intersections of things I need to remember and
+A running list in the intersection of things I want to remember and
 things I don't mind the internet knowing about me.
 
 ---
