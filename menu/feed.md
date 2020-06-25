@@ -1,12 +1,13 @@
 ---
 layout: page
-title: Everything Else
+title: Feed
 ---
 
-This includes a list of cool things I would like to have saved, as well as
-tiny thoughts that don't warrant a full blog post.
+A running list of things in the intersections of things I need to remember and
+things I don't mind the internet knowing about me.
 
 ---
+
 ### 25th June 2020, 04:45 AM
 
 I accidentally deleted 6 hours of uncommitted work:
