@@ -8,14 +8,6 @@ things I don't mind the internet knowing about me.
 
 ---
 
-### 15th July 2020, 10:15 AM
-
-I'm done with my degree! Just wrapped up my final presentation for my 8th
-semester internship. I start working full-time from ~~16th~~ 17th July at
-ThoughtSpot.
-
----
-
 ### 3rd July 2020, 2:16 AM
 
 Graphs are amazingly useful structures. Wanted something that could generate
