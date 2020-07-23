@@ -8,6 +8,15 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 24th July 2020, 01:20 AM
+
+Although C++ is a powerful language, it's quite easy to write ugly code.
+An example of the contrary is [Glow](https://github.com/pytorch/glow).
+The [graph optimizer code](https://github.com/pytorch/glow/blob/master/lib/Optimizer/GraphOptimizer/GraphOptimizer.cpp)
+is a joy to read. Going to use this as an example of steller C++ code.
+
+---
+
 ### 3rd July 2020, 2:16 AM
 
 Graphs are amazingly useful structures. Wanted something that could generate
