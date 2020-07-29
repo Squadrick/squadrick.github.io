@@ -8,6 +8,35 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 29th July 2020, 11:50 PM
+
+Picturing slice/concat/reshape operations on high-dim arrays gives me the
+same feelings as ASMR for some weird reason.
+
+Here's one I was just thinking about:
+
+```
+[4, 5, 3] -> SLICE@0, 4 * [1, 5, 3] -> concat@2 -> [1, 5, 12]
+```
+is not the same as
+```
+[4, 5, 3] -> RESHAPE(1, 5, 12)
+```
+
+To put it into words: Slicing + concat along different dimensions can't be
+replaced by a single reshape, unless the slicing + concat operate on subsequent
+dimensions. So that means:
+
+```
+[4, 5, 3] -> SLICE@0, 4 * [1, 5, 3] -> concat@1 -> [1, 20, 3]
+```
+is the same as
+```
+[4, 5, 3] -> RESHAPE(1, 20, 3)
+```
+
+---
+
 ### 24th July 2020, 01:20 AM
 
 Although C++ is a powerful language, it's quite easy to write ugly code.
