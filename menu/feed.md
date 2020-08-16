@@ -8,6 +8,16 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 17th August 2020, 1:35 AM
+
+I've really fucked up my sleep cycle. I'm currently alternating between
+10AM - 5PM or 3PM - 10PM depending on the day. The past week has been
+a random sequence of working, coding, watching YouTube, and trying to
+live my life in-between. The lack of a proper schedule is a clean 3/10.
+Would not recommend.
+
+---
+
 ### 29th July 2020, 11:50 PM
 
 Picturing slice/concat/reshape operations on high-dim arrays gives me the
@@ -34,6 +44,10 @@ is the same as
 ```
 [4, 5, 3] -> RESHAPE(1, 20, 3)
 ```
+
+*Update, 17th August:* If the dimension of slicing is after the concat dimension,
+the output of the fused slice will need to be tranposed along the concat/slice
+dimensions and then concatenated.
 
 ---
 
