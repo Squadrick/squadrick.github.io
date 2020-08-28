@@ -8,6 +8,21 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 28th August 2020, 6:10 PM 
+
+I've recently started working with Java during my day job, and I was
+reminded of a quote from [a blog](https://blog.pawandubey.com/dependency-injection-a-twenty-five-dollar-term/)
+I read _long_ ago:
+
+> “Dependency Injection” is a 25-dollar term for a 5-cent concept. – James Shore
+
+I think Java programmers made up a bunch of jargon to make
+their jobs feel cooler than it really is. Java, definitely,
+seems to favour verbosity over cleverness; perhaps, an averse
+reaction to the preceeding era of C++'s cleverness (read: pain).
+
+---
+
 ### 17th August 2020, 1:35 AM
 
 I've really fucked up my sleep cycle. I'm currently alternating between
