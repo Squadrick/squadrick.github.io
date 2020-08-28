@@ -17,7 +17,7 @@ I read _long_ ago:
 > “Dependency Injection” is a 25-dollar term for a 5-cent concept. – James Shore
 
 I think Java programmers made up a bunch of jargon to make
-their jobs feel cooler than it really is. Java, definitely,
+their jobs feel cooler than it really is. Java
 seems to favour verbosity over cleverness; perhaps, an averse
 reaction to the preceeding era of C++'s cleverness (read: pain).
 
