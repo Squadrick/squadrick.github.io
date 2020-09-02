@@ -11,6 +11,6 @@ I'm currently working at [ThoughtSpot](https://www.thoughtspot.com/) building AI
 
 I enjoy reading high fantasy and sci-fi books. I'm currently reading Steven Erikson's *Malazan Book of the Fallen*. ~~I used to be an avid gamer until I bricked my PC, so now I'm playing DnD.~~ I got a [new PC](https://squadrick.dev/journal/new-pc.html), and I'm back to gaming with my friends; I'm still playing DnD though. 
 
-This is a blog about coding and computers. I'll be writing about my solutions to unique problems I face. I generally try to avoid writing an article if something similar exists. I also post randomly thoughts and updates on my feed.
+This is a blog about coding and computers. I'll be writing about my solutions to unique problems I face. I generally try to avoid writing an article if something similar exists. I also post random thoughts and updates on my feed.
 
 If you're looking to hire me, here's my (slightly outdated) [résumé](https://squadrick.github.io/Resume.pdf).
