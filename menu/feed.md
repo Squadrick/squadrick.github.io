@@ -21,6 +21,10 @@ their jobs feel cooler than it really is. Java
 seems to favour verbosity over cleverness; perhaps, an averse
 reaction to the preceeding era of C++'s cleverness (read: pain).
 
+*Update, 1st September:* Honestly shocking that Java didn't get
+an equivalent of C++'s `auto` till Java 10. This is especially
+annoying when using for-each loops.
+
 ---
 
 ### 17th August 2020, 1:35 AM
