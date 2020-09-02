@@ -8,6 +8,15 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 2nd September 2020, 11:50PM
+
+Fall Guys is fun. I think the last time I found a game this
+enjoyable with friends was RuneScape in 2010.
+
+RIP AzzuTheBoss.
+
+---
+
 ### 28th August 2020, 6:10 PM 
 
 I've recently started working with Java during my day job, and I was
