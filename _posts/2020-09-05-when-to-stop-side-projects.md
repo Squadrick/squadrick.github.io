@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "When to stop working on side-projects."
+title: "When to stop working on side-projects"
 author: "Dheeraj R Reddy"
 categories: journal
 tags: [banter]
