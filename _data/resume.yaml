@@ -1,0 +1,75 @@
+name: Dheeraj Rajaram Reddy
+tagline: Whatever works.
+email: dheeraj98reddy@gmail.com
+website_name: squadrick.dev
+website_url: https://squadrick.dev
+location: Bangalore, India
+
+# Set the order of sections here.
+sections:
+  - experience
+  - education
+  - skills
+
+data:
+  education:
+    title: Education
+    items:
+      - Manipal Institute of Technology:
+          date: 2016 - 2020
+          subtitle: B. Tech Computer Science and Engineering
+          content: |
+              - Minor in computational mathematics
+              - CGPA: 8.25/10
+
+  experience:
+    title: Work Experience
+    items:
+      - Member of Technical Staff:
+          date: July 2019 - Present
+          subtitle: | 
+              [ThoughtSpot Inc.](https://thoughtspot.com/)
+          content: |
+              - Working of the [SpotIQ](https://www.thoughtspot.com/spotiq) team building algorithms for AI-driven automatic insights.
+              - Working on an internal Kubernetes backbone to ease the deployment of developer tools.
+      - Engineering Intern:
+          date: January 2020 - June 2020
+          subtitle: |
+              [ThoughtSpot Inc.](https://www.thoughtspot.com/)
+          content: |
+              - Designed and implemented a containerized execution engine for safely running user scripts.
+              - Worked on query-aware data-generation for large-scale testing of a relational database engine.
+              - Worked on improving the CI and build systems for Java services.
+      - Open Source Maintainer and Core Contributor:
+          date: June 2019 - May 2020
+          subtitle: |
+              [TensorFlow Addons](https://github.com/tensorflow/addons)
+          content: |
+              - Implemented several core layers, optimizers, models, and the first TF2.0 native implementation of CRFs.
+              - Reviewed 100+ open-source PRs on GitHub.
+              - Maintained the CI and package release pipelines.
+      - Intern:
+          date: May 2019 - June 2019
+          subtitle: |
+              [RazorThink Inc.](https://www.razorthink.com/)
+          content: |
+              - Rewrote a Spark data-processing pipeline to make it 3x faster and less prone to Java OOM errors.
+              - Added deep learning support for their automated ML platform using TensorFlow.
+              - Built a distributed KNN algorithm using Hybrid Spill-trees.
+
+      - Team Leader and Planning Head:
+          date: February 2017 - February 2019
+          subtitle: |
+              [Project MANAS](https://projectmanas.in/)
+          content: |
+              - Lead a team of 60 engineering students, handling both the technical and managerial aspects of a robotics team.
+              - The team placed 1st worldwide at [Intelligent Ground Vehicle Competition](http://www.igvc.org/) (IGVC) 2019.
+              - Won the Mahindra Rise Prize Challenge for building the best driveless car for Indian roads.
+              - Designed, implemented and tested the [software stacks](http://github.com/project-MANAS) of autonomous bots and cars.
+
+      - Research Assistant:
+          date: January 2018 - December 2019
+          subtitle: Manipal Institute of Technology
+          content: |
+              - Publication: B. J. Bhatkalkar, D. R. Reddy, S. Prabhu and S. V. Bhandary, "Improving the Performance of Convolutional Neural Network for the Segmentation of Optic Disc in Fundus Images Using Attention Gates and Conditional Random Fields," in IEEE Access, vol. 8, pp. 29299-29310, 2020
+

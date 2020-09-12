@@ -1,0 +1,62 @@
+{% assign cv = site.data.resume %}
+{% assign config = page.resume %}
+
+<div class="cv">
+    <style scoped>
+        .cv p { margin: 0; }
+        .cv h1, h2 { font-weight: normal; }
+        .cv-basic-info-item { margin-right: 1em; white-space: nowrap; }
+        .cv-basic-info { clear: both; }
+        .cv-section-title { font-size: 1.75rem; margin: 1.5rem 0 1rem 0; }
+        .cv-item-title { font-weight: bold; }
+        .cv-item-subtitle { font-style: italic; }
+        .cv-item-content { padding-left: 40px; }
+        .cv-item-content > ul { padding: 0; margin: 0; }
+        .cv-item-content em { color: #636c72; margin-left: 0.5rem; }
+        .cv-item-content { font-size: 0.9em; }
+        .cv-date { float: right; }
+        .cv-date { font-size: 0.8em; }
+
+        {% unless config.no_lines %}
+            .cv-section-header { position: relative; }
+            .cv-section-title { display: inline-block; background: #fff !important; padding-right: 1.2rem; }
+            .cv-section-title:after { position: absolute; top: 3.4rem; z-index: -1; content: ''; display: block; width: 100%; border-top: 1px solid; }
+        {% endunless %}
+
+    </style>
+
+    <header>
+        <h1 class="cv-name">{{cv.name}}</h1>
+        <span class="text-muted">{{cv.tagline}}</span>
+    </header>
+
+    <section class="cv-basic-info">
+        <span class="cv-basic-info-item"><i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:{{cv.email}}">{{cv.email}}</a></span>
+        <span class="cv-basic-info-item"><i class="fa fa-mouse-pointer"></i>&nbsp;&nbsp;<a href="{{cv.website_url}}">{{cv.website_name}}</a></span>
+        <span class="cv-basic-info-item"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{cv.location}}</span>
+    </section>
+
+    {% for sec_id in cv.sections %}
+        {% assign section = cv.data[sec_id] %}
+        <section class="cv-section" id="{{sec_id}}">
+            
+            <header class="cv-section-header"><h2 class="text-primary cv-section-title">{{section.title}}</h2></header>
+
+            {{ section.text | markdownify }}
+
+            {% for item in section.items %}
+                {% for keyvalue in item %}
+                    <div class="cv-item">
+                        <span class="cv-item-title">{{keyvalue[0]}}</span>
+                        <span class="cv-date">{{keyvalue[1].date}}</span>
+                        <div class="cv-item-subtitle">{{keyvalue[1].subtitle | markdownify }}</div>
+                        <div class="cv-item-content">{{keyvalue[1].content | markdownify}}</div>
+                    </div>
+
+                {% endfor %}
+            {% endfor %}
+
+        </section>
+    {% endfor %}
+
+</div><!-- .cv -->
