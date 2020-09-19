@@ -75,6 +75,14 @@ hr {
   border-top: 1px solid #ccc;
 }
 
+.button {
+  color: #999;
+  border: 1px solid #e0e0e0;
+  padding: 5px 10px;
+  display: inline-block;
+  font-size: 16px;
+}
+
 /*
   Site container
 */
@@ -499,4 +507,10 @@ th, td {
 
 .fa-rss-square:hover {
 	color: #ff6600;
+}
+
+@media print {
+  .no-print, .no-print * {
+    display: none !important;
+  }
 }

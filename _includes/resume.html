@@ -1,8 +1,10 @@
 {% assign cv = site.data.resume %}
 {% assign config = page.resume %}
 
+
 <div class="cv">
     <style scoped>
+        @page { size: auto; margin: 5mm; }
         .cv p { margin: 0; }
         .cv h1, h2 { font-weight: normal; }
         .cv-basic-info-item { margin-right: 1em; white-space: nowrap; }
@@ -60,3 +62,9 @@
     {% endfor %}
 
 </div><!-- .cv -->
+
+<div class="no-print"/>
+  <div>&nbsp;</div> <!-- empty space -->
+  This resume is generated automatically from a YAML file. You can directly
+  <a href="javascript:if(window.print)window.print()">print this file</a> to get a PDF.
+</div>

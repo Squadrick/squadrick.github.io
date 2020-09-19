@@ -73,3 +73,11 @@ data:
           content: |
               - Publication: B. J. Bhatkalkar, D. R. Reddy, S. Prabhu and S. V. Bhandary, "Improving the Performance of Convolutional Neural Network for the Segmentation of Optic Disc in Fundus Images Using Attention Gates and Conditional Random Fields," in IEEE Access, vol. 8, pp. 29299-29310, 2020
 
+  skills:
+    title: Selected Projects & Contributions
+    text: |
+        - [**Open source**](https://github.com/squadrick): Contributions to various OSS projects, including TensorFlow, PyTorch Glow compiler, etc.
+        - [**Shadesmar**](https://github.com/squadrick/shadesmar): A high-performance C++ IPC library that uses shared memory for communication. Supports RPC and pub-sub.
+        - **SummaryDB**: A database written in Go for storing colossal amounts of time-series data.
+        - [**Technical blog**](https://squadrick.dev/): Authored several technical articles on programming, designs, concepts, challenging problems I’ve faced, and computers in general.
+        - [**ReiLs**](https://gitlab.com/project-manas/ai/reils): A reinforcement learning framework for faster modular prototyping, deployment and benchmarking of Deep-RL algorithms. Built using TensorFlow, MPI and NCCL.
