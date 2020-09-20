@@ -1,14 +1,15 @@
 name: Dheeraj Rajaram Reddy
-tagline: Whatever works.
+tagline: Whatever works. # unused
 email: dheeraj98reddy@gmail.com
 website_name: squadrick.dev
 website_url: https://squadrick.dev
 location: Bangalore, India
+last-updated: 21st September 2020 # commit date
 
-# Set the order of sections here.
 sections:
   - experience
   - education
+  - projects
   - skills
 
 data:
@@ -30,22 +31,27 @@ data:
           subtitle: | 
               [ThoughtSpot Inc.](https://thoughtspot.com/)
           content: |
-              - Working of the [SpotIQ](https://www.thoughtspot.com/spotiq) team building algorithms for AI-driven automatic insights.
-              - Working on an internal Kubernetes backbone to ease the deployment of developer tools.
+              - Working of the [SpotIQ](https://www.thoughtspot.com/spotiq)
+              team building algorithms for AI-driven automatic insights.
+              - Working on an internal Kubernetes backbone to ease the
+              deployment of developer tools.
       - Engineering Intern:
           date: January 2020 - June 2020
           subtitle: |
               [ThoughtSpot Inc.](https://www.thoughtspot.com/)
           content: |
-              - Designed and implemented a containerized execution engine for safely running user scripts.
-              - Worked on query-aware data-generation for large-scale testing of a relational database engine.
+              - Designed and implemented a containerized execution engine for
+              safely running user scripts.
+              - Worked on query-aware data-generation for large-scale testing
+              of a relational database engine.
               - Worked on improving the CI and build systems for Java services.
       - Open Source Maintainer and Core Contributor:
           date: June 2019 - May 2020
           subtitle: |
               [TensorFlow Addons](https://github.com/tensorflow/addons)
           content: |
-              - Implemented several core layers, optimizers, models, and the first TF2.0 native implementation of CRFs.
+              - Implemented several core layers, optimizers, models, and the
+              first TF2.0 native implementation of CRFs.
               - Reviewed 100+ open-source PRs on GitHub.
               - Maintained the CI and package release pipelines.
       - Intern:
@@ -53,8 +59,10 @@ data:
           subtitle: |
               [RazorThink Inc.](https://www.razorthink.com/)
           content: |
-              - Rewrote a Spark data-processing pipeline to make it 3x faster and less prone to Java OOM errors.
-              - Added deep learning support for their automated ML platform using TensorFlow.
+              - Rewrote a Spark data-processing pipeline to make it 3x faster
+              and less prone to Java OOM errors.
+              - Added deep learning support for their automated ML platform
+              using TensorFlow.
               - Built a distributed KNN algorithm using Hybrid Spill-trees.
 
       - Team Leader and Planning Head:
@@ -62,22 +70,54 @@ data:
           subtitle: |
               [Project MANAS](https://projectmanas.in/)
           content: |
-              - Lead a team of 60 engineering students, handling both the technical and managerial aspects of a robotics team.
-              - The team placed 1st worldwide at [Intelligent Ground Vehicle Competition](http://www.igvc.org/) (IGVC) 2019.
-              - Won the Mahindra Rise Prize Challenge for building the best driveless car for Indian roads.
-              - Designed, implemented and tested the [software stacks](http://github.com/project-MANAS) of autonomous bots and cars.
+              - Lead a team of 60 engineering students, handling both the
+              technical and managerial aspects of a robotics team.
+              - The team placed 1st worldwide at
+              [Intelligent Ground Vehicle Competition](http://www.igvc.org/)
+              (IGVC) 2019.
+              - Won the Mahindra Rise Prize Challenge for building the best
+              driveless car for Indian roads.
+              - Designed, implemented and tested the
+              [software stacks](http://github.com/project-MANAS) of autonomous
+              bots and cars.
 
       - Research Assistant:
           date: January 2018 - December 2019
           subtitle: Manipal Institute of Technology
           content: |
-              - Publication: B. J. Bhatkalkar, D. R. Reddy, S. Prabhu and S. V. Bhandary, "Improving the Performance of Convolutional Neural Network for the Segmentation of Optic Disc in Fundus Images Using Attention Gates and Conditional Random Fields," in IEEE Access, vol. 8, pp. 29299-29310, 2020
+              - Publication: B. J. Bhatkalkar, D. R. Reddy, S. Prabhu and S. V.
+              Bhandary, "Improving the Performance of Convolutional Neural
+              Network for the Segmentation of Optic Disc in Fundus Images Using
+              Attention Gates and Conditional Random Fields," in IEEE Access,
+              vol. 8, pp. 29299-29310, 2020
 
-  skills:
+  projects:
     title: Selected Projects & Contributions
     text: |
-        - [**Open source**](https://github.com/squadrick): Contributions to various OSS projects, including TensorFlow, PyTorch Glow compiler, etc.
-        - [**Shadesmar**](https://github.com/squadrick/shadesmar): A high-performance C++ IPC library that uses shared memory for communication. Supports RPC and pub-sub.
-        - **SummaryDB**: A database written in Go for storing colossal amounts of time-series data.
-        - [**Technical blog**](https://squadrick.dev/): Authored several technical articles on programming, designs, concepts, challenging problems I’ve faced, and computers in general.
-        - [**ReiLs**](https://gitlab.com/project-manas/ai/reils): A reinforcement learning framework for faster modular prototyping, deployment and benchmarking of Deep-RL algorithms. Built using TensorFlow, MPI and NCCL.
+        - [**Open source**](https://github.com/squadrick): Contributions to
+        various OSS projects, including TensorFlow, PyTorch Glow compiler, etc.
+        - [**Shadesmar**](https://github.com/squadrick/shadesmar): A
+        high-performance C++ IPC library that uses shared memory for
+        communication. Supports RPC and pub-sub.
+        - **SummaryDB**: A database written in Go for storing colossal amounts
+        of time-series data.
+        - [**Technical blog**](https://squadrick.dev/): Authored several
+        technical articles on programming, designs, concepts, challenging
+        problems I’ve faced, and computers in general.
+        - [**ReiLs**](https://gitlab.com/project-manas/ai/reils): A
+        reinforcement learning framework for faster modular prototyping,
+        deployment and benchmarking of Deep-RL algorithms. Built using
+        TensorFlow, MPI and NCCL.
+
+  skills:
+    title: Skills
+    text: |
+        - **Languages**: C, C++, Java, Go, Groovy, Haxe, Python, Rust
+        - **Build Systems**: Bazel, CMake, Gradle
+        - **CI/CD**: GitHub Actions, Jenkins
+        - **Deep Learning**: CuDNN, Jax, PyTorch, TensorFlow
+        - **Parallel Programming**: Arm Neon, CUDA, Intel SIMD, Halide
+        - **Distributed Computing**: Docker + Kubernetes, MPI
+        - **RPC/serialization**: Cap'n Proto, Messagepack, Protobuf + gRPC,
+        Thrift
+        - **Miscellaneous**: OpenCV, ROS, Spark

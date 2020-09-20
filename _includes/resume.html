@@ -9,27 +9,22 @@
         .cv h1, h2 { font-weight: normal; }
         .cv-basic-info-item { margin-right: 1em; white-space: nowrap; }
         .cv-basic-info { clear: both; }
-        .cv-section-title { font-size: 1.75rem; margin: 1.5rem 0 1rem 0; }
+        .cv-section-title {
+          font-size: 1.6rem;
+          margin: 1rem 0 0.5rem 0;
+        }
         .cv-item-title { font-weight: bold; }
         .cv-item-subtitle { font-style: italic; }
-        .cv-item-content { padding-left: 40px; }
+        .cv-item-content { padding-left: 25px; font-size: 0.9em; }
         .cv-item-content > ul { padding: 0; margin: 0; }
         .cv-item-content em { color: #636c72; margin-left: 0.5rem; }
-        .cv-item-content { font-size: 0.9em; }
-        .cv-date { float: right; }
-        .cv-date { font-size: 0.8em; }
-
-        {% unless config.no_lines %}
-            .cv-section-header { position: relative; }
-            .cv-section-title { display: inline-block; background: #fff !important; padding-right: 1.2rem; }
-            .cv-section-title:after { position: absolute; top: 3.4rem; z-index: -1; content: ''; display: block; width: 100%; border-top: 1px solid; }
-        {% endunless %}
-
+        .cv-date { float: right; font-size: 0.8em; }
+        .cv-last-updated { font-style: italic; font-size: 0.8rem; }
     </style>
 
+    <div class="cv-last-updated"> Last updated: {{ cv.last-updated }} </div>
     <header>
         <h1 class="cv-name">{{cv.name}}</h1>
-        <span class="text-muted">{{cv.tagline}}</span>
     </header>
 
     <section class="cv-basic-info">
@@ -40,11 +35,16 @@
 
     {% for sec_id in cv.sections %}
         {% assign section = cv.data[sec_id] %}
+        {{ "---" | markdownify }}
         <section class="cv-section" id="{{sec_id}}">
             
-            <header class="cv-section-header"><h2 class="text-primary cv-section-title">{{section.title}}</h2></header>
+            <header class="cv-section-header">
+              <h2 class="text-primary cv-section-title">{{section.title}}</h2>
+            </header>
 
+            <div class="cv-item-content">
             {{ section.text | markdownify }}
+            </div>
 
             {% for item in section.items %}
                 {% for keyvalue in item %}
@@ -61,10 +61,12 @@
         </section>
     {% endfor %}
 
-</div><!-- .cv -->
+</div>
 
 <div class="no-print"/>
-  <div>&nbsp;</div> <!-- empty space -->
-  This resume is generated automatically from a YAML file. You can directly
-  <a href="javascript:if(window.print)window.print()">print this file</a> to get a PDF.
+  {{ "---" | markdownify }}
+  <p style="font-size:0.9rem; font-style:italic">
+    This résumé is auto-generated from a <a href="https://github.com/Squadrick/squadrick.github.io/blob/master/_data/resume.yaml">YAML file</a>.
+    You can directly <a href="javascript:if(window.print)window.print()">print this file</a> to get a PDF.
+  </p>
 </div>
