@@ -8,6 +8,25 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 21st September 2020, 01:05 AM
+
+Previously, my resume was a built using Latex, and I had a PDF in the
+GitHub repo. This had three problems:
+- Making changes were difficult. I had to update the `tex` source, generate
+the PDF and update the file in the repo.
+- The git history was bloated by having to track the different versions of
+the binary PDF file.
+- It wasn't a native webpage, so it didn't adapt to the device.
+
+Since this website is built using Jekyll, I can generate the resume while
+the site is being deployed. The data is stored in a YAML file along with
+some code to generate the appropriate HTML webpage.
+
+You can check it out [here](https://squadrick.dev/resume). One issue is that
+it uses more pages (2 vs. 1), but that's a trade off I'm willing to make.
+
+---
+
 ### 2nd September 2020, 11:50PM
 
 Fall Guys is fun. I think the last time I found a game this
