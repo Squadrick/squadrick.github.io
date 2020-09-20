@@ -13,4 +13,4 @@ I enjoy reading high fantasy and sci-fi books. I'm currently reading Steven Erik
 
 This is a blog about coding and computers. I'll be writing about my solutions to unique problems I face. I generally try to avoid writing an article if something similar exists. I also post random thoughts and updates on my feed.
 
-If you're looking to hire me, here's my (slightly outdated) [résumé](https://squadrick.github.io/Resume.pdf).
+If you're looking to hire me, here's my (slightly outdated) [résumé](https://squadrick.github.io/resume).
