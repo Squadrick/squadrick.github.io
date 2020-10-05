@@ -28,9 +28,9 @@
     </header>
 
     <section class="cv-basic-info">
-        <span class="cv-basic-info-item"><i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:{{cv.email}}">{{cv.email}}</a></span>
-        <span class="cv-basic-info-item"><i class="fa fa-mouse-pointer"></i>&nbsp;&nbsp;<a href="{{cv.website_url}}">{{cv.website_name}}</a></span>
-        <span class="cv-basic-info-item"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{cv.location}}</span>
+        <span class="cv-basic-info-item"><i class="fa fa-envelope"></i>&nbsp;<a href="mailto:{{cv.email}}">{{cv.email}}</a></span>
+        <span class="cv-basic-info-item"><i class="fa fa-mouse-pointer"></i>&nbsp;<a href="{{cv.website_url}}">{{cv.website_name}}</a></span>
+        <span class="cv-basic-info-item"><i class="fa fa-map-marker"></i>&nbsp;{{cv.location}}</span>
     </section>
 
     {% for sec_id in cv.sections %}
