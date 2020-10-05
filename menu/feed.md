@@ -8,6 +8,13 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 5th October 2020, 10:30 PM
+
+It's a Monday, and I'm already mentally and physically drained. This week is
+going to be rough.
+
+---
+
 ### 21st September 2020, 01:05 AM
 
 Previously, my resume was a built using Latex, and I had a PDF in the
