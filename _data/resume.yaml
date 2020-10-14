@@ -4,7 +4,7 @@ email: dheeraj98reddy@gmail.com
 website_name: squadrick.dev
 website_url: https://squadrick.dev
 location: Bangalore, India
-last-updated: 21st September 2020 # commit date
+last-updated: 14th October 2020 # commit date
 
 sections:
   - experience
@@ -33,8 +33,8 @@ data:
           content: |
               - Working of the [SpotIQ](https://www.thoughtspot.com/spotiq)
               team building algorithms for AI-driven automatic insights.
-              - Working on an internal Kubernetes backbone to ease the
-              deployment of developer tools.
+              - Part of a small team building a cloud-native solution for
+              monitoring time-series data.
       - Engineering Intern:
           date: January 2020 - June 2020
           subtitle: |
@@ -52,7 +52,6 @@ data:
           content: |
               - Implemented several core layers, optimizers, models, and the
               first TF2.0 native implementation of CRFs.
-              - Reviewed 100+ open-source PRs on GitHub.
               - Maintained the CI and package release pipelines.
       - Intern:
           date: May 2019 - June 2019
@@ -99,8 +98,9 @@ data:
         - [**Shadesmar**](https://github.com/squadrick/shadesmar): A
         high-performance C++ IPC library that uses shared memory for
         communication. Supports RPC and pub-sub.
-        - **SummaryDB**: A database written in Go for storing colossal amounts
-        of time-series data.
+        - [**SummaryDB**](https://github.com/squadrick/summarydb): A database
+        written in Go for storing colossal amounts of time-series data. Uses
+        window-based aggregations for compressing data.
         - [**Technical blog**](https://squadrick.dev/): Authored several
         technical articles on programming, designs, concepts, challenging
         problems I’ve faced, and computers in general.
