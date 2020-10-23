@@ -8,6 +8,17 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 24th October 2020, 02:50 AM
+
+I have such a tough time wrapping my head around the whole Kubernetes,
+Docker, Docker-compose jargon. I think it requires so much prerequisite
+prior knowledge that I'm not familiar with.
+
+Really makes me wish I spent a bit more time doing backend web-dev during
+my undergrad.
+
+---
+
 ### 5th October 2020, 10:30 PM
 
 It's a Monday, and I'm already mentally and physically drained. This week is
