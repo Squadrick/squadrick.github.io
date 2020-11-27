@@ -8,6 +8,35 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 28th November 2020, 03:35 AM
+
+I was coding something in C++ and required sum types, and reached for the
+evergreen `std::variant` and life was great. Until I realized C++ doesn't
+have type-based pattern matching (_à la_ [Go's Type Switch](https://tour.golang.org/methods/16)),
+but after a little digging I discovered `std::visit`.
+
+What should've been a simple piece of code ending up being monstrous
+boilerplate, so I figured I was doing something wrong. A quick google
+search for `std::visit usage` landed me in [this](https://bitbashing.io/std-visit.html)
+blog aptly titled:
+
+> std::visit is everything wrong with modern C++
+
+I strongly agree with the author. It is ridicously complex, and the
+addition of `make_visitor` as part of the standard would've been great.
+To be perfectly fair, I really don't understand their implementation
+that uses recursive overload. For now, I'm going with the `constexpr if`
+solution.
+
+I have half a mind to just roll my own `union` and `enum` based sum type.
+But experience has taught me that rolling my own alternative to a thing
+that exists in the C++ standard is good way to burn coding time.
+
+This aversion to writing code from scratch, and reusing clunky existing
+solutions is a sign that I'm on the road to become a Software Developer™.
+
+---
+
 ### 24th October 2020, 02:50 AM
 
 I have such a tough time wrapping my head around the whole Kubernetes, Docker,
