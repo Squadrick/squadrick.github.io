@@ -8,6 +8,14 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 4th December 2020, 10:18 PM
+
+The best advice I can give anyone is to never buy a snow-white keyboard.
+If you do, you'll spend two hours each month cleaning each key-cap
+only for it to be grimy within the week.
+
+---
+
 ### 28th November 2020, 03:35 AM
 
 I was coding something in C++ and required sum types, and reached for the
