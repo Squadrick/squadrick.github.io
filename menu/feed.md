@@ -8,6 +8,48 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 1st January *2021*, 03:25 AM
+
+It is end of 2020. It was a catastrophic year for the global community.
+On a personal front, it was a year of massive changes; a solid 6.5/10.
+
+Some of the positive highlights of my year:
+1. Education.
+2. Profession.
+3. Family.
+
+Some of the negative highlights:
+1. Death.
+2. Friendships.
+3. Time.
+
+I've never been one for resolutions, but I was looking forward to 2020.
+To quote Pirate Wires,
+> Big swings only.
+
+With that hope ending in a fiery pile of pandemic shit, I tried to make
+the best of the hand that was dealt. I like to think that all the
+negative highlights from above were exogenous, but in highsight I
+could've handled them better, with a bit less haze.
+
+The zeitgeist is that the end of 2020 will also annul us from the
+problems of 2020, while concurrently recognizing that 2021 will be
+a bleak, unchanging continuation. This juxtaposition reflects my personal
+outlook, but I side more with the former. I'm not hoping for big swings,
+but some _Mediocre Swings_ would be scenic.
+
+Covid didn't just leave it's mark on humanity, it french kissed it.
+I'm a witness to its gross, sloppy pervasiveness. I have spent my New Year's
+Eve quarantined in a room waiting for my RT-PCR test, with the gregarious
+company of the dull hum of my PC's fan, some bright lit screens, a bottle of
+red wine, and an uncomfortable sense of dreadly anticipation.
+
+**Update:** I have tested negative. One more to the list of positive highlights.
+
+Happy new year. Death to Covid. Long live enlightenment.
+
+---
+
 ### 4th December 2020, 10:18 PM
 
 The best advice I can give anyone is to never buy a snow-white keyboard.
