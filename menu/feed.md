@@ -8,6 +8,34 @@ things I don't mind the internet knowing about me.
 
 ---
 
+### 3rd February 2021, 12:15 AM
+
+Instead of using reference counts to keep track of liveness of a 
+pointer, instead use a dynamic graph to track all reference pointing.
+
+Referce counting wouldn't work too well when there's cycles in the
+pointer:
+
+```
+A --> B --> C --> A
+```
+
+This usually requires a workaround using weak pointers that
+don't increase the reference count.
+
+Using a reference graph instead would fix this problem, by
+denoting liveness as an edge to an eternal `sentinel`
+node. Every time a node is deleted (pointer is deallocated),
+we delete it's edge to `sentinel` and retrieve the list
+of nodes no longer connected to `sentinel`.
+
+Implementing the underlying dynamic graph to make it fast
+while being thread-safe would be a challenge. Some looking
+around leads to [this paper](https://arxiv.org/pdf/1809.00896.pdf)
+which would be perfect.
+
+---
+
 ### 1st January *2021*, 03:25 AM
 
 It is end of 2020. It was a catastrophic year for the global community.
