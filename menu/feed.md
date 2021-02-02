@@ -3,8 +3,7 @@ layout: page
 title: Feed
 ---
 
-A running list in the intersection of things I want to remember and
-things I don't mind the internet knowing about me.
+_Things I want to remember_   $$ \cap $$   _Things I don't mind the internet knowing_
 
 ---
 
