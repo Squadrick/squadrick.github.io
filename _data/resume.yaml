@@ -27,14 +27,12 @@ data:
     title: Work Experience
     items:
       - Member of Technical Staff:
-          date: July 2019 - Present
+          date: July 2020 - Present
           subtitle: | 
               [ThoughtSpot Inc.](https://thoughtspot.com/)
           content: |
-              - Working of the [SpotIQ](https://www.thoughtspot.com/spotiq)
+              - Part of the [SpotIQ](https://www.thoughtspot.com/spotiq)
               team building algorithms for AI-driven automatic insights.
-              - Part of a small team building a cloud-native solution for
-              monitoring time-series data.
       - Engineering Intern:
           date: January 2020 - June 2020
           subtitle: |
@@ -42,8 +40,8 @@ data:
           content: |
               - Designed and implemented a containerized execution engine for
               safely running user scripts.
-              - Worked on query-aware data-generation for large-scale testing
-              of a relational database engine.
+              - Worked on query-aware data-generation for testing ThoughtSpot's
+              database engine.
               - Worked on improving the CI and build systems for Java services.
       - Open Source Maintainer and Core Contributor:
           date: June 2019 - May 2020
