@@ -171,19 +171,6 @@ hr {
   }
 }
 
-.related {
-  padding-bottom: 2rem;
-}
-
-.related-posts {
-  padding-left: 0px;
-  list-style: none;
-}
-
-.related-posts a {
-  text-decoration: none;
-}
-
 /*
   Pagination
 */
@@ -513,4 +500,21 @@ th, td {
   .no-print, .no-print * {
     display: none !important;
   }
+}
+
+.header-link {
+  float: right;
+  opacity: 0;
+
+  \-webkit-transition: opacity 0.2s ease-in-out 0.1s;
+  \-moz-transition: opacity 0.2s ease-in-out 0.1s;
+  \-ms-transition: opacity 0.2s ease-in-out 0.1s;
+}
+
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+  opacity: 1;
 }
