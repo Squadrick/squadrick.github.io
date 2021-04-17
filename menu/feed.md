@@ -7,6 +7,17 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+### 18th April 2021, 12:45 AM
+
+Large software engineering systems are shockingly broken compared to systems
+from other engineering disciplines. Other disciplines have a strong constraint
+of having to adhere to physics, while infinite layers upon layers of
+abstraction allows software to be really divorced from a strong
+foundational tether. [It usually ends up being the sprwalings of diseased
+minds.](https://xkcd.com/1513/)
+
+---
+
 ### 3rd February 2021, 12:15 AM
 
 Instead of using reference counts to keep track of liveness of a 
