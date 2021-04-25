@@ -19,7 +19,7 @@ Large software engineering systems are shockingly broken compared to systems
 from other engineering disciplines. Other disciplines have a strong constraint
 of having to adhere to physics, while infinite layers upon layers of
 abstraction allows software to be really divorced from a strong
-foundational tether. [It usually ends up being the sprwalings of diseased
+foundational tether. [It usually ends up being the sprawlings of diseased
 minds.](https://xkcd.com/1513/)
 
 ---
