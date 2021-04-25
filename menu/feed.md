@@ -7,6 +7,12 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+### 25th April 2021, 04:44PM
+
+[Feynman's Nobel Ambition](https://www.asc.ohio-state.edu/kilcup.1/262/feynman.html?repostindays=413).
+
+---
+
 ### 18th April 2021, 12:45 AM
 
 Large software engineering systems are shockingly broken compared to systems
