@@ -7,6 +7,16 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+### 22nd May 2021, 02:43 AM
+
+I took an off from work today with the hopes of enjoying a nice birthday
+weekend. I spent the day listening to Neil Gaiman's The Sandman on Audible,
+and hacking on [SummaryDB](https://github.com/squadrick/summarydb/) and I
+just hit 100 commits. I thought it was worthy of
+[a tweet](https://twitter.com/DheerajRajaram/status/1395849916484767744).
+
+---
+
 ### 25th April 2021, 04:44PM
 
 [Feynman's Nobel Ambition](https://www.asc.ohio-state.edu/kilcup.1/262/feynman.html?repostindays=413).
