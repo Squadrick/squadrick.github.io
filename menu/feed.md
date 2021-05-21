@@ -9,7 +9,7 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ### 22nd May 2021, 02:43 AM
 
-I took an off from work today with the hopes of enjoying a nice birthday
+I took an off from work today with the hope of enjoying a nice birthday
 weekend. I spent the day listening to Neil Gaiman's The Sandman on Audible,
 and hacking on [SummaryDB](https://github.com/squadrick/summarydb/) and I
 just hit 100 commits. I thought it was worthy of
