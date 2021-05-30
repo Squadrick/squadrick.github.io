@@ -7,6 +7,12 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+### 30th May 2021, 06:50 PM
+
+Milestone in SummaryDB: [It works!](https://github.com/Squadrick/summarydb/commit/932ffefb2853785048a27d4fc308353b528cfe8d)
+
+---
+
 ### 22nd May 2021, 02:43 AM
 
 I took an off from work today with the hope of enjoying a nice birthday
