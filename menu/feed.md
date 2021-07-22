@@ -7,6 +7,19 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+### 23rd July 2021, 12:30 AM
+
+I hadn't worked on [Shadesmar](https://github.com/Squadrick/shadesmar) for nearly a year. I was
+looking at the code as reference for a tricky race condition at work. Not to brag, but the
+code was pretty neat, so I decided revist the project and I've been working on it over the last couple of weeks.
+
+I stumbled into a very tricky bug, and spent a good couple of hours debugging it. It was
+a wonderful experience. I once read somewhere that a nice bug is like intellectual comfort
+food, and this bug qualified handily. [Here's the fix](https://github.com/Squadrick/shadesmar/commit/25be585ced4c7dcd4b8a4faf8a592c9a37227ff3)
+along with a very nice commit message.
+
+---
+
 ### 30th May 2021, 06:50 PM
 
 Milestone in SummaryDB: [It works!](https://github.com/Squadrick/summarydb/commit/932ffefb2853785048a27d4fc308353b528cfe8d)
