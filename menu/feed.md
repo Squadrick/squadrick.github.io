@@ -7,6 +7,12 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+### 21st November 2021, 07:00 PM
+
+Code blasphemy: If you can't fix a CI test, [disable it](https://github.com/Squadrick/shadesmar/commit/023c512a6fd9ad641e9075f7f8eaf3e09189c3fc).
+
+---
+
 ### 23rd July 2021, 12:30 AM
 
 I hadn't worked on [Shadesmar](https://github.com/Squadrick/shadesmar) for nearly a year. I was
