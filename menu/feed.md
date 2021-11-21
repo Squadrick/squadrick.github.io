@@ -89,7 +89,7 @@ which would be perfect.
 
 ### 1st January *2021*, 03:25 AM
 
-It is end of 2020. It was a catastrophic year for the global community.
+It is the end of 2020. It was a catastrophic year for the global community.
 On a personal front, it was a year of massive changes; a solid 6.5/10.
 
 Some of the positive highlights of my year:
