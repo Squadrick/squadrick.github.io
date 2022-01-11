@@ -7,6 +7,30 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+12th January _2022_, 02:10 AM
+
+It is the end of 2021. It was a mediocre year, through both my external and internal lens. 7/10.
+At the start of 2021 I wrote that I had hoped for some _Mediocre Swings_, so I got what
+I asked for.
+
+The positive highlights:
+
+1. Exercise.
+2. Love.
+3. Travel.
+
+The negative highlists:
+
+1. Death.
+2. Covid.
+
+2021 did not annul us from the problems of 2020, thanks to d̷̨̗̟͎̝̏̒̇e̶̪̹̬̍l̶͎͓̪̗̹̾̽͑̏̑̚t̷̢̤̣̯̺͚̍́̊ă̷̧͍̒̾̉͛̉Δ̸̝͗͗̃.
+I have no hope for 2022. No swings.
+
+Happy new year. Death to Covid.
+
+---
+
 ### 21st November 2021, 07:00 PM
 
 Code blasphemy: If you can't fix a CI test, [disable it](https://github.com/Squadrick/shadesmar/commit/023c512a6fd9ad641e9075f7f8eaf3e09189c3fc).
