@@ -18,16 +18,16 @@ till there's a single digit answer:
 1. 5 + 1 + 5 + 6 + 7 + 8 = 32
 2. 3 + 2 = 5
 
-So the ansewr is `5`. I've found a faster way to compute this answer than the brute force sum:
-To elimate `9`s. Consider `0019`, I can either do `1 + 9 = 10`, then `1 + 0 = 1`, or just remove
-the `9` leaving `001` and the answer is trivial. This also works if a subset of numbers add
+So the anwser is `5`. I've found a faster way to compute this answer than the brute force sum:
+To eliminate `9`s. Consider `0019`, I can either do `1 + 9 = 10`, then `1 + 0 = 1`, or just remove
+the `9` leaving `001` and the answer is trivial. This also works if a subset of numbers adds
 up to `9`, like `1245` (=`3`) or `4333` (=`4`). This also applies to multiples of `9`.
 
 Another speed-up is memoization. Since I've played this so much, I remember the result for all pairs
-and some trios/quartets of numbers which makes apply the `9` elimination rule faster. For `4378`: I
-recall that `78` reduces to `6`, `6 + 3 = 9`, so it can be elimated, which leaves `4`.
+and some trios/quartets of numbers which makes appling the `9` elimination rule faster. For `4378`:
+I recall that `78` reduces to `6`, `6 + 3 = 9`, so it can be eliminated, which leaves `4`.
 
-I can compute the answers extremely quick now, if I can had to guess, maybe half a second on average.
+I can compute the answers extremely quickly now. If I can had to guess, maybe half a second on average.
 
 This game has kept me occupied through several hours of traffic, both as a passenger and a driver.
 
