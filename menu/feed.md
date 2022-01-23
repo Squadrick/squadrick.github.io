@@ -26,7 +26,7 @@ the `9` leaving `001` and the answer is trivial. This also works if a subset of 
 up to `9`, like `1245` (=`3`) or `4333` (=`4`). This also applies to multiples of `9`.
 
 Another speed-up is memoization. Since I've played this so much, I remember the result for all pairs
-and some trios/quartets of numbers which makes appling the `9` elimination rule faster. For `4378`:
+and some trios/quartets of numbers which makes applying the `9`-elimination rule faster. For `4378`:
 I recall that `78` reduces to `6`, `6 + 3 = 9`, so it can be eliminated, which leaves `4`.
 
 I can compute the answers extremely quickly now. If I can had to guess, maybe half a second on average.
