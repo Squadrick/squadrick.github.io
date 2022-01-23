@@ -7,6 +7,32 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+23rd January 2022, 11:30 PM
+
+[I recently read about games that one can play in their head](https://internetblog.co/atharva/2022/01/22/b685bf93-6532-4959-b581-a7d183a69b9e.html).
+Here's a game I've played when outside for as long as I can remember. The objective is to
+recursively add up vehicle numbers till you're left with a single digit.
+
+So if the vehicle number is `KA 51 AA 5678`, recursively apply the sum reduce rule on `515678`
+till there's a single digit answer:
+1. 5 + 1 + 5 + 6 + 7 + 8 = 32
+2. 3 + 2 = 5
+
+So the ansewr is `5`. I've found a faster way to compute this answer than the brute force sum:
+To elimate `9`s. Consider `0019`, I can either do `1 + 9 = 10`, then `1 + 0 = 1`, or just remove
+the `9` leaving `001` and the answer is trivial. This also works if a subset of numbers add
+up to `9`, like `1245` (=`3`) or `4333` (=`4`). This also applies to multiples of `9`.
+
+Another speed-up is memoization. Since I've played this so much, I remember the result for all pairs
+and some trios/quartets of numbers which makes apply the `9` elimination rule faster. For `4378`: I
+recall that `78` reduces to `6`, `6 + 3 = 9`, so it can be elimated, which leaves `4`.
+
+I can compute the answers extremely quick now, if I can had to guess, maybe half a second on average.
+
+This game has kept me occupied through several hours of traffic, both as a passenger and a driver.
+
+---
+
 12th January _2022_, 02:10 AM
 
 It is the end of 2021. It was a mediocre year, through both my external and internal lens. 7/10.
