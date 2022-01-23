@@ -10,11 +10,13 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 23rd January 2022, 11:30 PM
 
 [I recently read about games that one can play in their head](https://internetblog.co/atharva/2022/01/22/b685bf93-6532-4959-b581-a7d183a69b9e.html).
-Here's a game I've played when outside for as long as I can remember. The objective is to
-recursively add up vehicle numbers till you're left with a single digit.
+Here's a game I've played when outside for as long as I can remember. This game has kept me
+occupied through several hours of traffic, both as a passenger and a driver.
 
-So if the vehicle number is `KA 51 AA 5678`, recursively apply the sum reduce rule on `515678`
-till there's a single digit answer:
+The game is to recursively add up vehicle numbers till you're left with a single digit.
+
+If the vehicle number is `KA 51 AA 5678`, recursively apply the sum reduce rule on `515678`
+till there's a single digit:
 1. 5 + 1 + 5 + 6 + 7 + 8 = 32
 2. 3 + 2 = 5
 
@@ -28,8 +30,6 @@ and some trios/quartets of numbers which makes appling the `9` elimination rule 
 I recall that `78` reduces to `6`, `6 + 3 = 9`, so it can be eliminated, which leaves `4`.
 
 I can compute the answers extremely quickly now. If I can had to guess, maybe half a second on average.
-
-This game has kept me occupied through several hours of traffic, both as a passenger and a driver.
 
 ---
 
