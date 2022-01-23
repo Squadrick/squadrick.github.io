@@ -7,7 +7,7 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
-23rd January 2022, 11:30 PM
+### 23rd January 2022, 11:30 PM
 
 [I recently read about games that one can play in their head](https://internetblog.co/atharva/2022/01/22/b685bf93-6532-4959-b581-a7d183a69b9e.html).
 Here's a game I've played when outside for as long as I can remember. This game has kept me
@@ -33,7 +33,7 @@ I can compute the answers extremely quickly now. If I can had to guess, maybe ha
 
 ---
 
-12th January _2022_, 02:10 AM
+### 12th January _2022_, 02:10 AM
 
 It is the end of 2021. It was a mediocre year, through both my external and internal lens. 7/10.
 At the start of 2021 I wrote that I had hoped for some _Mediocre Swings_, so I got what
