@@ -1,4 +1,10 @@
-### and its Americanisation
+---
+layout: post
+title: "Indian Culture, and and its Americanisation"
+author: "Dheeraj R Reddy"
+categories: journal
+tags: [banter]
+---
 
 I went for a walk while listening to Dave Chapelle on JRE. They were talking
 about fame, and the Americanization of the world, and it stuck with me. I know
