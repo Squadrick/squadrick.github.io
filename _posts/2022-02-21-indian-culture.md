@@ -1,4 +1,4 @@
-### Indian Culture, and its Americani~s~zation
+### and its Americanisation
 
 I went for a walk while listening to Dave Chapelle on JRE. They were talking
 about fame, and the Americanization of the world, and it stuck with me. I know
