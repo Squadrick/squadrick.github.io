@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Indian Culture, and and its Americanisation"
+title: "Indian Culture, and Americanisation"
 author: "Dheeraj R Reddy"
 categories: journal
 tags: [banter]
