@@ -10,7 +10,7 @@ I went for a walk while listening to Dave Chapelle on JRE. They were talking
 about fame, and the Americanization of the world, and it stuck with me. I know
 more about American culture than Indian culture. All the media I consume is
 produced by and intended for Americans. I haven't tested this, but I probably
-get less Indian cultural references compared to Indian ones. Am I losing touch
+get less Indian cultural references compared to American ones. Am I losing touch
 with my Indian culture? Is that really a bad thing?
 
 Another thing that adds to this is the massive diversity within India. As a Kannadiga
