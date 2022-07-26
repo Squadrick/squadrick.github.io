@@ -29,14 +29,14 @@ data:
       - Member of Technical Staff:
           date: July 2020 - Present
           subtitle: | 
-              [ThoughtSpot Inc.](https://thoughtspot.com/)
+              [ThoughtSpot](https://thoughtspot.com/)
           content: |
               - Part of the [SpotIQ](https://www.thoughtspot.com/spotiq)
               team building algorithms for AI-driven automatic insights.
       - Engineering Intern:
           date: January 2020 - June 2020
           subtitle: |
-              [ThoughtSpot Inc.](https://www.thoughtspot.com/)
+              [ThoughtSpot](https://www.thoughtspot.com/)
           content: |
               - Designed and implemented a containerized execution engine for
               safely running user scripts.
