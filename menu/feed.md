@@ -7,6 +7,16 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+### 3rd November 2022, 12:13 AM
+
+It's been a hot minute since I've updated this feed. Here's what I've been up:
+1. I'm implementing [PBRT](https://pbrt.org/) in Rust.
+2. I'm making my way through Malazan again, along with a coworker.
+3. I've been working out a lot more, and trying to be more healthy.
+4. I'm moving to USA soon, to work with the ThoughtSpot Bay Area team. 
+
+---
+
 ### 23rd January 2022, 11:30 PM
 
 [I recently read about games that one can play in their head](https://internetblog.co/atharva/2022/01/22/b685bf93-6532-4959-b581-a7d183a69b9e.html).
