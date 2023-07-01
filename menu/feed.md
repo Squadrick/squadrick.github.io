@@ -5,6 +5,14 @@ title: Feed
 
 _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet knowing_
 
+--
+
+### 30th June 2023, 11:00 PM
+
+If using LLMs to generate code, prefer using sampling over beam search. [This paper](https://arxiv.org/pdf/2108.07732.pdf) was the starting point of my discovery, which lead to two [more](https://arxiv.org/pdf/1908.10090.pdf) [papers](https://arxiv.org/pdf/1510.03055.pdf).
+
+The general gist is that when picking new candidates, beam search only compares against complete outputs of differing lengths or incomplete outputs of the same length as the current candidate being generated. It does not compare against incomplete outputs of differing lengths. For some reason, this is okay for generating language not for code, it results in degenerate outputs. Why?
+
 ---
 
 ### 3rd November 2022, 12:13 AM
