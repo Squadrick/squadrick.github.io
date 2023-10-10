@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/squadrick
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://squadrick.dev
+  * I am squadrick (https://keybase.io/squadrick) on keybase.
+  * I have a public key ASBocE6w52pjJMMTe2U8I8lUeKaZx6gS5uIl6Y7WLa0eHQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012068704eb0e76a6324c3137b653c23c95478a699c7a812e6e225e98ed62dad1e1d0a",
+      "host": "keybase.io",
+      "kid": "012068704eb0e76a6324c3137b653c23c95478a699c7a812e6e225e98ed62dad1e1d0a",
+      "uid": "03e4eb1dde4fa565b309c28df3b8b119",
+      "username": "squadrick"
+    },
+    "merkle_root": {
+      "ctime": 1696980146,
+      "hash": "90e935d430eb1524900744a26daf23d5f37c4d6beb8cfe3bf956fec1b9bf85df7a7e59010d028b2de584e22c85edcecd1d6f35f502880f5dd4fcee121b390f15",
+      "hash_meta": "4de3f3b09879584706fe4a1358b7f998a0b67e70eb830771076a49c760efda40",
+      "seqno": 25017338
+    },
+    "service": {
+      "entropy": "38wczlD5278/xQ6pKyVSsskP",
+      "hostname": "squadrick.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.3"
+  },
+  "ctime": 1696980202,
+  "expire_in": 504576000,
+  "prev": "1c875bb1a400b029b4fe5d556da5d904dc666b7f0a9ab38a462d62f2288dd5ec",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgaHBOsOdqYyTDE3tlPCPJVHimmceoEubiJemO1i2tHh0Kp3BheWxvYWTESpcCB8QgHIdbsaQAsCm0/l1VbaXZBNxma38KmrOKRi1i8iiN1ezEIDYGqCFEVZn/SIKfql81PZp7xx6POljk/HiEe43CxxE+AgHCo3NpZ8RA/3hKfme9t+qK1ZbTBL7caJrctbeRFWTmvexTGwKR4hK7LB7eMigdgbU7Nuf3uffPDM9astk2nMiZweYvsdm5AKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEINRmqQBwehbTYWxE/FlnrAVPtDy1iT4SWU/n0mYj4XkYo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/squadrick
+
+==================================================================
