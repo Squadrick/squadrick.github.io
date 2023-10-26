@@ -3,8 +3,8 @@ tagline: Whatever works. # unused
 email: dheeraj98reddy@gmail.com
 website_name: squadrick.dev
 website_url: https://squadrick.dev
-location: Bangalore, India
-last-updated: 26th July 2022 # commit date
+location: San Francisco
+last-updated: 26th October 2023 # commit date
 
 sections:
   - experience
@@ -31,8 +31,10 @@ data:
           subtitle: | 
               [ThoughtSpot](https://thoughtspot.com/)
           content: |
-              - Part of the [SpotIQ](https://www.thoughtspot.com/spotiq)
-              team building algorithms for AI-driven automatic insights.
+              - Things I've worked on: SpotIQ (ML engine), Cortex (Time-series
+              forecasting), Falcon (OLAP DB), Build systems, Training LLMs,
+              Production Engineering (Search + Data infra), C++ infrastructure,
+              CI/CD
       - Engineering Intern:
           date: January 2020 - June 2020
           subtitle: |
