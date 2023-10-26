@@ -5,6 +5,12 @@ title: Feed
 
 _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet knowing_
 
+---
+
+### 26th October 2023, 04:12PM
+
+The system we've built for wealth distribution is so absurb. I'm in Melbourne, an extremely wealthy city in an extremely wealthy country, and there's a homeless woman sitting in the prime business district with huge empty buildings all around.
+
 --
 
 ### 30th June 2023, 11:00 PM
