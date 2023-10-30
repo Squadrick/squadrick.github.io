@@ -93,25 +93,24 @@ vectorized instructions to copy multiple bytes in a single loop iteration
 which is the latest instruction set that the CPU on my laptop supports. With
 `VEC_SIZE = 32`, it copies 32 bytes at a time.
 
-`unaigned`: This is a generic version of `memmove` that can copy between any
+`unaligned`: This is a generic version of `memmove` that can copy between any
 pointer locations irrespective of their alignment. Unaligned pointers increase
-complexity for copy loop when using vectorized instructions. The unaligned
-starting and ending pointers must be copied separately before hitting the
+complexity for the copy loop when using vectorized instructions. The unaligned
+preceeding and trailing memory locations must be copied separately before hitting the
 optimized loop.
 
 `memmove-vec-unaligned-erms.S` holds the actual implementation in assembly. A
 few things that the implementation does:
 
-1. It uses `REP MOVS` only if the data is greater than 4kB. For values smaller
-than that is uses SSE2 optimization.
+1. It uses `REP MOVS` only if the data is greater than 4kB. For smaller values it uses the SSE2 optimization.
 
-2. For handling `unaligned` pointers, it uses the following blocks:
+3. For handling `unaligned` pointers, it uses the following blocks:
    - 16 to 31: `vmovdqu`
    - 15 to 8: `movq`
    - 7 to 4: `movl`
    - 3 to 2: `movzwl` and `movw`
 
-3. `VMOVNT` defined above is for doing non-temporal(NT) moves. NT instructions
+4. `VMOVNT` defined above is for doing non-temporal(NT) moves. NT instructions
 are used when there is an overlap between destination and source since
 destination may be in cache when source is loaded. Uses `prefetcht0` to load
 data into cache (all levels: t0). In the current iteration, we prefetch the
@@ -129,7 +128,7 @@ L(loop_large_forward):
 	VMOVU	VEC_SIZE(%rsi), %VEC(1)
 	VMOVU	(VEC_SIZE * 2)(%rsi), %VEC(2)
 	VMOVU	(VEC_SIZE * 3)(%rsi), %VEC(3)
-  ; mov 128b from rsi to rsi+127 -> 4 ymm registers (cahce)
+  ; mov 128b from rsi to rsi+127 -> 4 ymm registers (cache)
   ; 2 loops later, we hit the prefetched values
 
 	addq	$PREFETCHED_LOAD_SIZE, %rsi  ; advance to rsi+128 in next loop
@@ -150,7 +149,7 @@ L(loop_large_forward):
 
 ### Method 1: Basic REP MOVSB
 
-Before getting into more exotic implementation, I wanted to first implement a
+Before getting into more exotic implementations, I wanted to first implement a
 super simple version of ERSB to see how well it would perform. I used inline
 assembly to write out the loop.
 
