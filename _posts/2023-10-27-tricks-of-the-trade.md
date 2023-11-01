@@ -73,4 +73,84 @@ Here, if `inputs.size() == 1`, the loop is completely skipped and `func` is call
 
 I've not really found this technique being called anything but I refer to it as "thread inlining". If you've seen this before, send me an email about it.
 
+---
+### Read-copy-update 
+
+To explain RCU, let me introduce an example problem of flag management. A service has a global configuration of flags, which is periodically updated. Every read path must be protected, since an update could change the underlying data:
+
+```c++
+std::shared_mutex mu;
+Flags* gFlags;
+
+void algo() {
+  mu.lock_shared();
+  AlgorithmConfig algoConfig = gFlags->algoConfig;
+  mu.unlock_shared();
+  execute(algoConfig);
+}
+
+void updateFlags() {
+  // Read + copy
+  Flags* oldFlags;
+  Flags* newFlags = getFlagsFromRemoteServer();
+  mu.lock();
+  // Update
+  oldFlags = gFlags;
+  gFlags = newFlags;
+  mu.unlock();
+  delete oldFlags;
+}
+```
+
+Doing this in a safe, fast manner is crucial. The above example of a shared mutex is slow and doesn't scale with the readers. The readers have to `lock_shared` and `lock_unshared` every iteration, even if the overwheling majority of time there is no update. An alternative would be to wrap `gFlags` in `std::shared_ptr`, but that has almost the same overhead as using a lock to protect it due to ref-counting.
+
+Removing the locks entirely:
+
+```c++
+std::atomic<Flags*> gFlags;
+
+void algo() {
+  Flags* flags = gFlags.load();
+  AlgorithmConfig algoConfig = flags->algoConfig;
+  execute(algoConfig);
+}
+
+void updateFlags() {
+  Flags* newFlags = getFlagsFromRemoteServer();
+  gFlags.store(newFlags);
+  // Can't delete the older flag state, since we don't know
+  // when the readers will be done with using it. The solution
+  // is to leak it.
+}
+```
+This is a faster implementation, but one that is not safe as it leaks the older data.
+
+RCU is a synchronization primitive that allows this:
+```c++
+std::atomic<Flags*> gFlags;
+
+void algo() {
+  {
+    // The critical section.
+    rcu_read_lock();
+    Flags* flags = gFlags.load();
+    AlgorithmConfig algoConfig = flags->algoConfig;
+    rcu_read_unlock();
+  }
+  execute(algoConfig);
+}
+
+void updateFlags() {
+  Flags* oldFlags = gFlags.load();
+  Flags* newFlags = getFlagsFromRemoteServer();
+  gFlags.store(newFlags);
+  rcu_synchronize();
+  delete oldFlags;
+}
+```
+
+`read_read_{lock,unlock}` is super fast (sometimes a no-op depending on the implementation), so it is perfect for our use case. This allows for minimal overhead in the much more often read path, while still ensuring the safety when calling the solemn write path.
+
+[qemu's implementation of RCU](https://gitlab.com/qemu-project/qemu/-/blob/master/docs/devel/rcu.txt) is a great read to understand both the usage and the implementation of RCU. 
+
 [^1]: Pulled this out of my ass. Just go with it. 
