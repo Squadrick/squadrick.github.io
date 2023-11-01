@@ -6,25 +6,23 @@ categories: journal
 tags: [programming]
 ---
 
-I've worked on a wide range of software projects: ML stuff, databases, search engines, rendering engines, web servers. Most of which involved writing code that was performant. Over that time, I've learnt a bunch of tricks from each domain that I think can be applied broadly, and this blog will capture some of them.
+I've worked on a wide range of software projects: ML stuff, databases, search engines, rendering engines, web servers. Most of which involved writing code that was performant. I've learnt a bunch of tricks from each domain that I think can be applied broadly, and this blog explains some of them.
 
 ---
 
 ### First construct, then optimize
 
-Construct the data-structure first in an inefficient way, but that's easy to reason about and optimize. If you're building a tree, just use pointers for the node connectivity. Once the data-structure is fully built, convert to a much more optimized structure using knowledge about:
+Construct the data-structure first in an inefficient way, but that's easy to reason about and optimize.  Once the data-structure is fully built, convert to a much more optimized structure using knowledge about:
 1. The distribution of data in the structure.
 2. The read/access pattern.
 
-For instance, if the number of nodes in a tree is known and the accesses will be primarily breath-first, balance the tree and then convert the inefficient-tree-with-pointers to a dense BFS array with index offsets for connecting edges. Then discard the inefficient tree structure. The dense structure is gonna be balanced, smaller and faster, with better memory locality. 
-
-The down-side is that the optimized, dense representation cannot be updated. So this is only applicable for data-structures that are read-heavy and infrequently updated. To add new data:
+The usual down-side is that the optimized representation cannot be updated easily. So this is only applicable for data-structures that are read-heavy and infrequently updated. To add new data:
 1. Convert the dense structure back to the inefficient structure, add the data, then reconvert back to dense, OR
 2. Generate the inefficient structure from scratch (considering the raw data is stored elsewhere) with the additional data, reconvert back to dense. 
 
-*Example*: A k-d tree for approximate kNN search over vector space representing some embedded text: some version of this can be used for powering RAG in LLMs. The dataset to search over is likely to be updated every fortnight, but the reads are gonna be far more frequent: ~1k QPS[^1].
+*Example*: A k-d tree for approximate kNN search in high-dim vector space: some version of this can be used for similarily text search. The dataset to search over is likely to be updated every fortnight, but the reads are gonna be far more frequent: ~1k QPS[^1]. The unoptimized k-d tree data-structure uses pointers for node-connectivity, with simple straight forward construction. Once constructured, balance the tree (spilling is a common optimization) and convert it to a dense DFS array with index offsets for connecting nodes. Then discard the unoptimized data-structure. The dense k-d tree is gonna be more balanced, smaller and faster, with better memory locality.
 
-Check out the [compact BVH implementation from PBRT](https://pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies#CompactBVHForTraversal) for a more in-depth explanation. 
+Check out the [compact BVH implementation from PBRT](https://pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies#CompactBVHForTraversal) for a more in-depth explanation.
 
 ---
 ### Local memory allocators
@@ -40,7 +38,7 @@ This has more benefits:
 
 This is typically used when there's a clear start/end point for processing like a frame in a video game or a request lifetime. A local allocator is created at the start, with bump allocation (increment a pointer for allocation) throughout and then finally reset the buffer at the end (reset pointer).
 
-[This article](https://www.rfleury.com/p/untangling-lifetimes-the-arena-allocator) gives a lot deeper into the topic.
+[This article](https://www.rfleury.com/p/untangling-lifetimes-the-arena-allocator) dives a lot deeper into the topic.
 
 ---
 ### Use the calling thread
