@@ -20,7 +20,7 @@ The usual down-side is that the optimized representation cannot be updated easil
 1. Convert the dense structure back to the inefficient structure, add the data, then reconvert back to dense, OR
 2. Generate the inefficient structure from scratch (considering the raw data is stored elsewhere) with the additional data, reconvert back to dense. 
 
-*Example*: A k-d tree for approximate kNN search in high-dim vector space: some version of this can be used for similarily text search. The dataset to search over is likely to be updated every fortnight, but the reads are gonna be far more frequent: ~1k QPS[^1]. The unoptimized k-d tree data-structure uses pointers for node-connectivity, with simple straight forward construction. Once constructured, balance the tree (spilling is a common optimization) and convert it to a dense DFS array with index offsets for connecting nodes. Then discard the unoptimized data-structure. The dense k-d tree is gonna be more balanced, smaller and faster, with better memory locality.
+*Example*: A k-d tree for approximate kNN search in high-dim vector space: some version of this can be used for similarily text search. The dataset to search over is likely to be updated every fortnight, but the reads are gonna be far more frequent: ~1k QPS. The unoptimized k-d tree data-structure uses pointers for node-connectivity, with simple straight forward construction. Once constructured, balance the tree (spilling is a common optimization) and convert it to a dense DFS array with index offsets for connecting nodes. Then discard the unoptimized data-structure. The dense k-d tree is gonna be more balanced, smaller and faster, with better memory locality.
 
 Check out the [compact BVH implementation from PBRT](https://pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration/Bounding_Volume_Hierarchies#CompactBVHForTraversal) for a more in-depth explanation.
 
@@ -151,6 +151,4 @@ void updateFlags() {
 
 `read_read_{lock,unlock}` is super fast (sometimes a no-op depending on the implementation), so it is perfect for our use case. This allows for minimal overhead in the much more often read path, while still ensuring the safety when calling the solemn write path.
 
-[qemu's implementation of RCU](https://gitlab.com/qemu-project/qemu/-/blob/master/docs/devel/rcu.txt) is a great read to understand both the usage and the implementation of RCU. 
-
-[^1]: Pulled this out of my ass. Just go with it. 
+[Folly's implementation of RCU](https://github.com/facebook/folly/blob/main/folly/synchronization/Rcu.h) is a great read to understand both the usage and the implementation of RCU. 
