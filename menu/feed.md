@@ -7,6 +7,15 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 
 ---
 
+### 30th November 2023, 12:45AM 
+
+I've been medidating a lot more lately, and a technique I really enjoy is box breathing. It's a pattern of holding your breath between inhaling and exhaling.
+To make it easier to follow along, I made a simple website: https://squadrick.dev/boxbreathe/
+
+I learnt and built this entirely in CSS.
+
+---
+
 ### 26th October 2023, 04:12PM
 
 The system we've built for wealth distribution is so absurb. I'm in Melbourne, an extremely wealthy city in an extremely wealthy country, and there's a homeless woman sitting in the prime business district with huge empty buildings all around.
