@@ -10,7 +10,7 @@ _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet kno
 ### 30th November 2023, 12:45AM 
 
 I've been medidating a lot more lately, and a technique I really enjoy is box breathing. It's a pattern of holding your breath between inhaling and exhaling.
-To make it easier to follow along, I made a simple website: https://squadrick.dev/boxbreathe/
+To make it easier to follow along, I made a simple website: [https://squadrick.dev/boxbreathe/](https://squadrick.dev/boxbreathe/)
 
 I learnt and built this entirely in CSS.
 
