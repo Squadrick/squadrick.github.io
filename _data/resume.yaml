@@ -4,7 +4,7 @@ email: dheeraj98reddy@gmail.com
 website_name: squadrick.dev
 website_url: https://squadrick.dev
 location: San Francisco
-last-updated: 26th October 2023 # commit date
+last-updated: 5th January 2024 # commit date
 
 sections:
   - experience
@@ -21,7 +21,6 @@ data:
           subtitle: B. Tech Computer Science and Engineering
           content: |
               - Minor in computational mathematics
-              - CGPA: 8.25/10
 
   experience:
     title: Work Experience
@@ -31,20 +30,14 @@ data:
           subtitle: | 
               [ThoughtSpot](https://thoughtspot.com/)
           content: |
-              - Things I've worked on: SpotIQ (ML engine), Cortex (Time-series
-              forecasting), Falcon (OLAP DB), Build systems, Training LLMs,
-              Production Engineering (Search + Data infra), C++ infrastructure,
-              CI/CD
-      - Engineering Intern:
-          date: January 2020 - June 2020
-          subtitle: |
-              [ThoughtSpot](https://www.thoughtspot.com/)
-          content: |
-              - Designed and implemented a containerized execution engine for
-              safely running user scripts.
-              - Worked on query-aware data-generation for testing ThoughtSpot's
-              database engine.
-              - Worked on improving the CI and build systems for Java services.
+              - SpotIQ: ML engine
+              - Cortex: Time-series forecasting
+              - Falcon: OLAP in-memory JIT database
+              - Build systems: Bazel, Gradle
+              - LLMs: Fine-tuning, scaling, deployment
+              - Production Engineering: Search + Data infra
+              - C++ infrastructure/core libs
+              - CI/CD: Jenkins, Tooling
       - Open Source Maintainer and Core Contributor:
           date: June 2019 - May 2020
           subtitle: |
@@ -53,6 +46,14 @@ data:
               - Implemented several core layers, optimizers, models, and the
               first TF2.0 native implementation of CRFs.
               - Maintained the CI and package release pipelines.
+      - Intern:
+          date: January 2020 - June 2020
+          subtitle: |
+              [ThoughtSpot](https://www.thoughtspot.com/)
+          content: |
+              - Containerized execution engine.
+              - Query-aware data-generation.
+              - CI and build systems.
       - Intern:
           date: May 2019 - June 2019
           subtitle: |
@@ -64,7 +65,7 @@ data:
               using TensorFlow.
               - Built a distributed KNN algorithm using Hybrid Spill-trees.
 
-      - Team Leader and Planning Head:
+      - Team Leader and Motion-Planning Head:
           date: February 2017 - February 2019
           subtitle: |
               [Project MANAS](https://projectmanas.in/)
@@ -79,16 +80,6 @@ data:
               - Designed, implemented and tested the
               [software stacks](http://github.com/project-MANAS) of autonomous
               bots and cars.
-
-      - Research Assistant:
-          date: January 2018 - December 2019
-          subtitle: Manipal Institute of Technology
-          content: |
-              - Publication: B. J. Bhatkalkar, D. R. Reddy, S. Prabhu and S. V.
-              Bhandary, "Improving the Performance of Convolutional Neural
-              Network for the Segmentation of Optic Disc in Fundus Images Using
-              Attention Gates and Conditional Random Fields," in IEEE Access,
-              vol. 8, pp. 29299-29310, 2020
 
   projects:
     title: Selected Projects & Contributions
@@ -112,12 +103,10 @@ data:
   skills:
     title: Skills
     text: |
-        - **Languages**: C, C++, Java, Go, Groovy, Haxe, Python, Rust
+        - **Languages**: C, C++, Java, Go, Python, Rust, JS
         - **Build Systems**: Bazel, CMake, Gradle
         - **CI/CD**: GitHub Actions, Jenkins
-        - **Deep Learning**: CuDNN, Jax, PyTorch, TensorFlow
-        - **Parallel Programming**: Arm Neon, CUDA, Intel SIMD, Halide
+        - **Deep Learning**: Jax, PyTorch, TensorFlow
+        - **Parallel Programming**: Arm Neon, Intel SIMD, Halide
         - **Distributed Computing**: Docker + Kubernetes, MPI
-        - **RPC/serialization**: Cap'n Proto, Messagepack, Protobuf + gRPC,
-        Thrift
-        - **Miscellaneous**: OpenCV, ROS, Spark
+        - **Miscellaneous**: OpenCV, ROS, Thrift, gRPC, Protobuf
