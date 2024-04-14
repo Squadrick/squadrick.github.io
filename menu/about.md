@@ -11,7 +11,7 @@ I work at [Anthropic](https://anthropic.com/) as a software engineer on the pret
 
 I like open source software. I used to be a  maintainer of [TensorFlow Addons](https://github.com/tensorflow/addons/), and I contribute to other OSS projects. I occasionally work on a few side projects which you can check out on my [GitHub](https://github.com/Squadrick), notably [Shadesmar](https://github.com/Squadrick/shadesmar), [SummaryDB](https://github.com/Squadrick/summarydb) and [Retrograde](https://github.com/Squadrick/Retrograde). My interests in the field of computers: Distributed systems, ML, rendering engines, build systems, high-performance computing. 
 
-I worked at [ThoughtSpot](https://www.thoughtspot.com/) as a software engineer for nearly four years. My work there spaned a lot of domains: ML, databases, search, build systems, APIs, making code go brrr, and a bunch of other random things along the way. I also helped found the production engineering team, which worked alongside our SRE and R&D teams to ensure our search and data systems didn't crash and burn.
+I worked at [ThoughtSpot](https://www.thoughtspot.com/) as a software engineer for nearly four years. My work there spanned a lot of domains: ML, databases, search, build systems, APIs, making code go brrr, and a bunch of other random things along the way. I also helped found the production engineering team, which worked alongside our SRE and R&D teams to ensure our search and data systems didn't crash and burn.
 
 I was a part of my university's [AI Robotics Team](http://projectmanas.in), where we worked on building an autonomous car and won [IGVC 2019](http://www.igvc.org/). I've had a few interships over my four years of undergrad, mostly focusing on ML.
 
