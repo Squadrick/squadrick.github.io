@@ -3,7 +3,7 @@ layout: page
 title: About Me
 ---
 
-I'm Dheeraj, and I commonly use _Squadrick_ as my internet moniker. I'm from BLR, and I now live in London. I als used to live in SF for a while.
+I'm Dheeraj, and I commonly use _Squadrick_ as my internet moniker. I'm from BLR, and I now live in London. I also used to live in SF for a while.
 
 I spend many hours each week trying to get computers to understand me.
 
