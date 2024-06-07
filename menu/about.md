@@ -7,7 +7,7 @@ I'm Dheeraj, and I commonly use _Squadrick_ as my internet moniker. I'm from BLR
 
 I spend many hours each week trying to get computers to understand me.
 
-I work at [Anthropic](https://anthropic.com/) as a software engineer on the pretraining team. I mostly focus of the data used for training foundational models.
+I work at [Anthropic](https://anthropic.com/) as a software engineer on the pretraining team.
 
 I like open source software. I used to be a  maintainer of [TensorFlow Addons](https://github.com/tensorflow/addons/), and I contribute to other OSS projects. I occasionally work on a few side projects which you can check out on my [GitHub](https://github.com/Squadrick), notably [Shadesmar](https://github.com/Squadrick/shadesmar), [SummaryDB](https://github.com/Squadrick/summarydb) and [Retrograde](https://github.com/Squadrick/Retrograde). My interests in the field of computers: Distributed systems, ML, rendering engines, build systems, high-performance computing. 
 
