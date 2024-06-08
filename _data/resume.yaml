@@ -3,8 +3,8 @@ tagline: Whatever works. # unused
 email: dheeraj98reddy@gmail.com
 website_name: squadrick.dev
 website_url: https://squadrick.dev
-location: San Francisco
-last-updated: 19th May 2024 # commit date
+location: London
+last-updated: 7th June 2024 # commit date
 
 sections:
   - experience
@@ -25,6 +25,12 @@ data:
   experience:
     title: Work Experience
     items:
+      - Member of Technical Staff:
+          date: June 2024 - Present
+          subtitle: |
+              [Anthropic](https://www.anthropic.com/)
+          content: |
+              - Pretraining
       - Member of Technical Staff:
           date: July 2020 - May 2024
           subtitle: | 
