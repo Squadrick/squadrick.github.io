@@ -4,7 +4,7 @@ email: dheeraj98reddy@gmail.com
 website_name: squadrick.dev
 website_url: https://squadrick.dev
 location: London
-last-updated: 7th June 2024 # commit date
+last-updated: 28th July 2024 # commit date
 
 sections:
   - experience
@@ -32,7 +32,7 @@ data:
           content: |
               - Pretraining
       - Member of Technical Staff:
-          date: July 2020 - May 2024
+          date: January 2020 - May 2024
           subtitle: | 
               [ThoughtSpot](https://thoughtspot.com/)
           content: |
@@ -52,24 +52,6 @@ data:
               - Implemented several core layers, optimizers, models, and the
               first TF2.0 native implementation of CRFs.
               - Maintained the CI and package release pipelines.
-      - Intern:
-          date: January 2020 - June 2020
-          subtitle: |
-              [ThoughtSpot](https://www.thoughtspot.com/)
-          content: |
-              - Containerized execution engine.
-              - Query-aware data-generation.
-              - CI and build systems.
-      - Intern:
-          date: May 2019 - June 2019
-          subtitle: |
-              [RazorThink Inc.](https://www.razorthink.com/)
-          content: |
-              - Rewrote a Spark data-processing pipeline to make it 3x faster
-              and less prone to Java OOM errors.
-              - Added deep learning support for their automated ML platform
-              using TensorFlow.
-              - Built a distributed KNN algorithm using Hybrid Spill-trees.
 
       - Team Leader and Motion-Planning Head:
           date: February 2017 - February 2019
@@ -114,5 +96,5 @@ data:
         - **CI/CD**: GitHub Actions, Jenkins
         - **Deep Learning**: Jax, PyTorch, TensorFlow
         - **Parallel Programming**: Arm Neon, Intel SIMD, Halide
-        - **Distributed Computing**: Docker + Kubernetes, MPI
+        - **Distributed Computing**: Docker + Kubernetes, MPI, Spark
         - **Miscellaneous**: OpenCV, ROS, Thrift, gRPC, Protobuf
