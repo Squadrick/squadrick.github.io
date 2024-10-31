@@ -4,13 +4,12 @@ email: dheeraj98reddy@gmail.com
 website_name: squadrick.dev
 website_url: https://squadrick.dev
 location: London
-last-updated: 28th July 2024 # commit date
+last-updated: 31st October 2024 # commit date
 
 sections:
   - experience
   - education
   - projects
-  - skills
 
 data:
   education:
@@ -36,39 +35,19 @@ data:
           subtitle: | 
               [ThoughtSpot](https://thoughtspot.com/)
           content: |
-              - SpotIQ: ML engine
-              - Cortex: Time-series forecasting
-              - Falcon: OLAP in-memory JIT database
-              - Build systems: Bazel, Gradle
-              - LLMs: Fine-tuning, scaling, deployment
-              - Production Engineering: Search + Data infra
-              - C++ infrastructure/core libs
-              - CI/CD: Jenkins, Tooling
+              - Worked on a lot of things: ML, databases, search, infra, build, CI, LLMs
       - Open Source Maintainer and Core Contributor:
           date: June 2019 - May 2020
           subtitle: |
               [TensorFlow Addons](https://github.com/tensorflow/addons)
-          content: |
-              - Implemented several core layers, optimizers, models, and the
-              first TF2.0 native implementation of CRFs.
-              - Maintained the CI and package release pipelines.
 
       - Team Leader and Motion-Planning Head:
           date: February 2017 - February 2019
           subtitle: |
               [Project MANAS](https://projectmanas.in/)
           content: |
-              - Lead a team of 60 engineering students, handling both the
-              technical and managerial aspects of a robotics team.
-              - The team placed 1st worldwide at
-              [Intelligent Ground Vehicle Competition](http://www.igvc.org/)
-              (IGVC) 2019.
-              - Won the Mahindra Rise Prize Challenge for building the best
-              driveless car for Indian roads.
-              - Designed, implemented and tested the
-              [software stacks](http://github.com/project-MANAS) of autonomous
-              bots and cars.
-
+              - Lead a team of sixty, handling both technical work and team management.
+  
   projects:
     title: Selected Projects & Contributions
     text: |
@@ -85,16 +64,4 @@ data:
         problems I’ve faced, and computers in general.
         - [**ReiLs**](https://gitlab.com/project-manas/ai/reils): A
         reinforcement learning framework for faster modular prototyping,
-        deployment and benchmarking of Deep-RL algorithms. Built using
-        TensorFlow, MPI and NCCL.
-
-  skills:
-    title: Skills
-    text: |
-        - **Languages**: C, C++, Java, Go, Python, Rust, JS
-        - **Build Systems**: Bazel, CMake, Gradle
-        - **CI/CD**: GitHub Actions, Jenkins
-        - **Deep Learning**: Jax, PyTorch, TensorFlow
-        - **Parallel Programming**: Arm Neon, Intel SIMD, Halide
-        - **Distributed Computing**: Docker + Kubernetes, MPI, Spark
-        - **Miscellaneous**: OpenCV, ROS, Thrift, gRPC, Protobuf
+        deployment and benchmarking of Deep-RL algorithms.
