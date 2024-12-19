@@ -5,6 +5,16 @@ title: Feed
 
 _Things I want to remember_   $$ \cap $$   _Things I don't mind the internet knowing_
 
+
+### 19th December 2024, 10:37AM
+
+A feed update over a year later, lots has changed in my life:
+1. I moved from SF to London
+2. I started a new job at Anthropic
+3. I got married
+
+2024 has been a very fulfilling and eventful year.
+
 ---
 
 ### 30th November 2023, 12:45AM 
